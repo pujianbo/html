@@ -1,7 +1,9 @@
 html {
-    color: #464646;
+    color: #333;
+    font: 14px/1.5 'Helvetica Neue','Helvetica','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Arial','sans-serif';
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
     word-break: break-word;
-    font: 12px/1.5 'Microsoft Yahei', 'Consolas', 'Arial', '\5b8b\4f53';
 }
 
 table {
@@ -108,8 +110,7 @@ input[type=tel] {
     ime-mode: disabled;
 }
 
-button[disabled=disabled],
-input[disabled=disabled] {
+[disabled=disabled] {
     cursor: not-allowed;
 }
 
@@ -126,20 +127,8 @@ section {
     display: block;
 }
 
-audio,
-canvas,
-video {
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-}
-
-audio:not([controls]) {
-    display: none;
-}
-
 .clearfix:after,
-.clearfix:after {
+.clearfix:before {
     display: table;
     content: '';
     clear: both;
@@ -173,10 +162,6 @@ audio:not([controls]) {
     position: relative;
 }
 
-.absolute {
-    position: absolute;
-}
-
 .text-center {
     text-align: center;
 }
@@ -187,9 +172,4 @@ audio:not([controls]) {
 
 .text-right {
     text-align: right;
-}
-.text-els {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
