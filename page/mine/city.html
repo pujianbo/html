@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>city</title>
+		<script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/city.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			select[disabled=disabled],
+			select:empty {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<form action="city.html" method="get">
+			<br />
+			<div id="city">
+				<select class="prov" name="prov"></select>
+				<select class="city" name="city"></select>
+				<select class="dist" name="dist"></select>
+			</div>
+			<br />
+			<div id="city2">
+				<select class="prov"></select>
+				<select class="city"></select>
+				<select class="dist"></select>
+			</div>
+			<br />
+			<div id="city3">
+				<select class="prov">
+					<option>四川</option>
+				</select>
+				<select class="city"></select>
+				<select class="dist"></select>
+			</div>
+			<br />
+			<input type="submit" value="submit" />
+		</form>
+
+		<script type="text/javascript">
+			$('#city').citySelect();
+			$('#city2').citySelect({
+				'prov': '四川',
+				'city': '成都',
+				'dist': '青羊区',
+			});
+			$('#city3').citySelect({
+				'required': false
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>imglazysrc</title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<style type="text/css">
+			img {
+				width: 400px;
+				height: 300px;
+				background: blueviolet;
+			}
+		</style>
+	</head>
+
+	<body>
+		<br /><img lazysrc="../../img/banner01.jpg" />
+		<br /><img lazysrc="../../img/banner02.jpg" />
+		<br /><img lazysrc="../../img/banner03.jpg" />
+		<br /><img lazysrc="../../img/banner04.jpg" />
+		<br /><img lazysrc="../../img/banner01.jpg" />
+		<br /><img lazysrc="../../img/banner02.jpg" />
+		<br /><img lazysrc="../../img/banner03.jpg" />
+		<br /><img lazysrc="../../img/banner04.jpg" />
+		<br /><img lazysrc="../../img/banner01.jpg" />
+		<br /><img lazysrc="../../img/banner02.jpg" />
+		<br /><img lazysrc="../../img/banner03.jpg" />
+		<br /><img lazysrc="../../img/banner04.jpg" />
+		<br /><img lazysrc="../../img/banner01.jpg" />
+		<br /><img lazysrc="../../img/banner02.jpg" />
+		<br /><img lazysrc="../../img/banner03.jpg" />
+		<br /><img lazysrc="../../img/banner04.jpg" />
+		<br /><img lazysrc="../../img/banner01.jpg" />
+		<br /><img lazysrc="../../img/banner02.jpg" />
+		<br /><img lazysrc="../../img/banner03.jpg" />
+		<br /><img lazysrc="../../img/banner04.jpg" />
+		<br /><img lazysrc="../../img/banner01.jpg" />
+		<br /><img lazysrc="../../img/banner02.jpg" />
+		<br /><img lazysrc="../../img/banner03.jpg" />
+		<br /><img lazysrc="../../img/banner04.jpg" />
+		<br /><img lazysrc="../../img/banner01.jpg" />
+		<br /><img lazysrc="../../img/banner02.jpg" />
+		<br /><img lazysrc="../../img/banner03.jpg" />
+		<br /><img lazysrc="../../img/banner04.jpg" />
+		<br /><img lazysrc="../../img/banner01.jpg" />
+		<br /><img lazysrc="../../img/banner02.jpg" />
+		<br /><img lazysrc="../../img/banner03.jpg" />
+		<br /><img lazysrc="../../img/banner04.jpg" />
+		<script>
+			/*
+			 * 图片进入可视区加载
+			 * 图片要读取的路径属性为lazysrc
+			 */
+			function lazyImg() {
+				window.onload = lazySrc;
+				window.onscroll = lazySrc;
+
+				function lazySrc() {
+					var seeHeight = document.documentElement.clientHeight;
+					var scrollTop = document.body.scrollTop;
+					var imgObj = document.querySelectorAll('img[lazysrc]');
+					for(var i = 0; i < imgObj.length; i++) {
+						if(imgObj[i].src == "") {
+							if(imgObj[i].offsetTop < seeHeight + scrollTop) {
+								imgObj[i].src = imgObj[i].getAttribute("lazysrc");
+							}
+						}
+					}
+				}
+			};
+			lazyImg();
+		</script>
+	</body>
+
+</html>

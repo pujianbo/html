@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="keywords" content="keywords">
+		<meta name="description" content="description">
+		<title>html</title>
+		<style type="text/css">
+			body {
+				padding: 0 0 100px;
+				background: ghostwhite;
+			}
+			
+			summary:focus {
+				outline: none;
+				cursor: pointer;
+			}
+			
+			p,
+			.p {
+				padding: 6px 10px;
+				background: grey;
+				color: white;
+				line-height: 26px;
+			}
+			
+			.clearfix {
+				margin-top: 16px;
+			}
+			
+			.clearfix:before,
+			.clearfix:after {
+				content: "";
+				display: table;
+			}
+			
+			.clearfix:after {
+				clear: both;
+			}
+			
+			.ullist {
+				overflow: hidden;
+			}
+			
+			.ullist li {
+				width: 36%;
+				padding: 4px 10px;
+				margin: 8px 20px 0px 0px;
+				float: left;
+				border: 1px solid antiquewhite;
+				display: inline-block;
+			}
+			
+			table {
+				caption-side: bottom;
+				font-weight: bold;
+				line-height: 40px;
+				empty-cells: hide;
+				border-collapse: collapse;
+			}
+			
+			tfoot {
+				text-align: center;
+				background: lightblue;
+			}
+			
+			blockquote {
+				background: violet;
+				color: white;
+				padding: 6px 11px;
+			}
+			
+			ruby rt {
+				margin: 4px;
+			}
+			
+			.word {
+				direction: rtl;
+				unicode-bidi: bidi-override;
+				text-align: left;
+			}
+			
+			.small {
+				font-variant: small-caps;
+			}
+			
+			#main {
+				height: 100px;
+				line-height: 100px;
+				border: 1px solid silver;
+				display: flex;
+				text-align: center;
+				color: dimgray;
+			}
+			
+			#main div:nth-of-type(1) {
+				flex-grow: 5;
+				background-color: coral;
+			}
+			
+			#main div:nth-of-type(2) {
+				flex-grow: 2;
+				background-color: blanchedalmond;
+			}
+			
+			#main div:nth-of-type(3) {
+				flex-grow: 1;
+				background-color: khaki;
+			}
+			
+			#main div:nth-of-type(4) {
+				flex-grow: 1;
+				background-color: pink;
+			}
+			
+			#main div:nth-of-type(5) {
+				flex-grow: 1;
+				background-color: lightgrey;
+			}
+			
+			.float-left {
+				float: left;
+				margin: 20px 40px 20px 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<p><bdo dir="rtl">看看这段文字，是不是觉得奇怪啊，这是从右向左读的哟</bdo> bdo dir="rtl"</p>
+		<p><span class="word">看看这段文字，是不是觉得奇怪啊，这是从右向左读的哟</span> direction: rtl; unicode-bidi: bidi-override;</p>
+		<p class="small">My name is Hege Refsnes.　　　(font-variant: small-caps;)
+			<dialog open>This is an open dialog window</dialog>
+		</p>
+		<aside class="p">
+			blockquote引用标签使用：是不是说看到首航自动上下左右都缩进了
+			<blockquote>
+				For 50 years, WWF has been protecting the future of nature.
+			</blockquote>
+		</aside>
+		<p>
+			<noscript>document.write("Hello World!") noscript</noscript> document.write("Hello World!") noscript
+		</p>
+		<p>
+			隐藏标签：hidden="hidden"
+		</p>
+		<p class="clearfix">
+			<ruby>
+				今<rp>(</rp><rt>jin</rt><rp>)</rp>
+				年<rp>(</rp><rt>nian</rt><rp>)</rp>
+				庄<rp>(</rp><rt>zhuang</rt><rp>)</rp>
+				家<rp>(</rp><rt>jia</rt><rp>)</rp>
+				收<rp>(</rp><rt>shou</rt><rp>)</rp>
+				成<rp>(</rp><rt>cheng</rt><rp>)</rp>
+				好<rp>(</rp><rt>hao</rt><rp>)</rp>
+			</ruby>
+		</p>
+		<div class="p clearfix">
+			<ul class="ullist">
+				<li><em>强调内容 em</em></li>
+				<li><strong>加粗文本 b/strong</strong></li>
+				<li><dfn>特殊术语或短语的定义 dfn</dfn></li>
+				<li><code>编码文本 code</code></li>
+				<li><samp>对文档中的文本进行格式化，需要解释的文本 samp</samp></li>
+				<li><kbd>定义键盘文本 kbd</kbd></li>
+				<li><var>变量的名称,或者由用户提供的值 var</var></li>
+				<li><cite>标题 cite</cite></li>
+				<li><i>斜体 i</i></li>
+				<li><del>删除线 del/s/strike</del></li>
+				<li><ins>下划线 ins/u</ins></li>
+				<li><wbr>不还行文本 wbr</wbr>
+				</li>
+				<li><abbr title="World Health Organization">缩写abbr/acronym，鼠标title属性，[WHO] </abbr></li>
+				<li><mark>高亮显示 mark</mark></li>
+				<li><time pubdate datetime="2012-03-01">2012-03-01 time</time></li>
+				<li><address>收货地址 address</address></li>
+				<li><small>文字变小 small</small>　　<big>文字变大 big</big></li>
+				<li>下标<sub>sub</sub>　　上标<sup>sup</sup></li>
+				<li><tt>打字机文本 tt</tt></li>
+			</ul>
+		</div>
+
+		<div id="main" class="clearfix">
+			<div>50%（display: flex; > flex-grow: 5;）</div>
+			<div>20%（flex-grow: 2）</div>
+			<div>10%</div>
+			<div>10%</div>
+			<div>10%</div>
+		</div>
+		<div class="p clearfix">
+			<form action="other.html">
+				<input list="browser" />
+				<input type="submit" value="submit" />
+				<label>input list="browser" datalist#browser>option(value)</label>
+				<datalist id="browser">
+					<option value="IE browser">
+					<option value="FireFox">
+					<option value="Safari">
+					<option value="Opera">
+					<option value="Chrome">
+				</datalist>
+			</form>
+			<table width="50%" border="1" class="float-left" cellspacing="0" cellpadding="10" bordercolor="gray" bgcolor="#007AFF" draggable="true">
+				<caption>Monthly savings css(caption-side: bottom)</caption>
+				<colgroup>
+					<col span="2" style="background-color:goldenrod">
+					<col style="background-color:lightcoral">
+				</colgroup>
+				<thead>
+					<tr>
+						<th colspan="2">Month</th>
+						<th>Month</th>
+						<th>Savings</th>
+						<th>Savings</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>January</td>
+						<td>$100</td>
+						<td rowspan="2">January</td>
+						<td>$100</td>
+						<td>$100</td>
+					</tr>
+					<tr>
+						<td>February</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+						<td>-</td>
+					</tr>
+				</tfoot>
+			</table>
+			<figure class="float-left">
+				<img src="../../img/planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap">
+				<map name="planetmap">
+					<area shape="rect" coords="0,0,82,126" alt="Sun" href="../../img/merglobe.gif" target="_blank" />
+					<area shape="circle" coords="90,58,3" alt="Mercury" href="../../img/venglobe.gif" target="_blank" />
+					<area shape="circle" coords="124,58,8" alt="Venus" href="../../img/sun.gif" target="_blank" />
+				</map>
+				<figcaption>map>area(rect/circle/shape)</figcaption>
+			</figure>
+			<dl class="float-left">
+				<dt>标题 dl>dt/dd dt</dt>
+				<dd>段落 dl>dt/dd dd</dd>
+				<dt>标题 dl>dt/dd dt</dt>
+				<dd>段落 dl>dt/dd dd</dd>
+			</dl>
+		</div>
+
+		<div class="p clearfix">
+			<meter value="0.6">60%</meter>
+			<meter max="10" value="2">2 out of 10</meter>
+			<progress max="10" value="2"></progress>
+		</div>
+		<div class="p clearfix">
+			<details>
+				<summary>展开查看详情</summary>
+				<form>
+					<fieldset style="height: 0;padding: 6px; text-align: center;border: 1px solid red;">
+						<legend>表单信息</legend>
+					</fieldset>
+					<fieldset>
+
+						<legend>表单提交--
+							<font color="coral">按钮选择提交页面以及提交方式</font>
+						</legend>
+						<form method="get">
+							<label>用户名：</label><input type="text" placeholder="请输入用户名" name="username" id="username" value="username" /><br />
+							<label>密　码：</label><input type="password" placeholder="请输入密码" name="password" value="123456" /><br />
+							<label>颜　色：</label><input type="color" name="color" /><br />
+							<label>进度条：</label><input name="range" name="range" type="range" min="0" max="100" step="5" /><br />
+							<label style="vertical-align: top;">多　选：</label>
+							<select multiple="multiple" size="4">
+								<optgroup label="组名称组名称组名称组名称">
+									<option>111111111111</option>
+									<option>222222222222</option>
+									<option>333333333333</option>
+									<option>444444444444</option>
+									<option>555555555555</option>
+									<option>666666666666</option>
+								</optgroup>
+								<optgroup label="组名称组名称组名称组名称">
+									<option>777777777777</option>
+									<option>888888888888</option>
+									<option>999999999999</option>
+									<option>000000000000</option>
+								</optgroup>
+							</select><br />
+							<label>操　作：</label>
+							<input type="submit" value="跳转到注册" formaction="regist" formmethod="post" />
+							<input type="submit" value="跳转到登录" formaction="login" /><br />
+						</form>
+					</fieldset>
+				</form>
+			</details>
+		</div>
+	</body>
+
+</html>

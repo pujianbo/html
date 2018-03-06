@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				background: #40944e;
+			}
+			
+			img {
+				position: absolute;
+				z-index: 3;
+			}
+			
+			div {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				background: #dcc62a;
+				top: 0;
+				left: 158px;
+				z-index: 2;
+				animation:  move 2s ease-in-out infinite alternate;
+			}
+			
+			@keyframes move{
+				from{
+					left:112px;
+				}
+				to{
+					left:186px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<img src="http://www.jq22.com/demo/jQuery-hdcd201701171209/css/sport-large.png">
+		<div></div>
+	</body>
+
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>svg</title>
+		<style type="text/css">
+			svg {
+				background: blueviolet;
+				height: 140px;
+				width: 240px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<svg>
+			<rect width="200" height="100" x="20" y="20" fill="gray" stroke-width="6" stroke="orange" />
+		</svg>
+		<svg>
+			<rect width="100" height="100" x="70" y="20" fill="gray" stroke-width="6" stroke="orange" rx="20" ry="20" />
+		</svg>
+		<svg>
+			<rect width="200" height="100" x="20" y="20" fill="gray" stroke-width="6" stroke="orange" rx="20" ry="50" fill-opacity="0.6" stroke-opacity="0.7" />
+		</svg>
+		<svg>
+			<defs>
+				<filter id="f1" x="0" y="0">
+					<feGaussianBlur in="SourceGraphic" stdDeviation="4" />
+				</filter>
+			</defs>
+			<rect width="200" height="100" x="20" y="20" fill="gray" stroke="orange" stroke-width="6" filter="url(#f1)" />
+		</svg>
+		<svg>
+			<defs>
+				<filter id="filter" x="0" y="0">
+					<feGaussianBlur stdDeviation="1" />
+					<feOffset dx="10" dy="10" />
+				</filter>
+			</defs>
+			<rect width="120" height="90" x="20" y="20" fill="yellowgreen" filter="url(#filter)" />
+			<rect width="120" height="90" x="20" y="20" fill="yellow" />
+		</svg>
+		<svg>
+			<defs>
+				<filter id="f1" x="0" y="0" width="110%" height="110%">
+					<feOffset result="offOut" in="SourceGraphic" dx="10" dy="9" />
+					<feGaussianBlur result="blurOut" in="offOut" stdDeviation="1" />
+					<feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+				</filter>
+			</defs>
+			<rect width="120" height="90" x="20" y="20" fill="yellow" filter="url(#f1)" />
+		</svg>
+		<svg>
+			<defs>
+				<filter id="f1" x="0" y="0" width="110%" height="110%">
+					<feOffset result="offOut" in="SourceAlpha" dx="10" dy="9" />
+					<feGaussianBlur result="blurOut" in="offOut" stdDeviation="1" />
+					<feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+				</filter>
+			</defs>
+			<rect width="120" height="90" x="20" y="20" fill="yellow" filter="url(#f1)" />
+		</svg>
+		<svg>
+			<defs>
+				<filter id="f1" x="0" y="0" width="110%" height="110%">
+					<feOffset result="offOut" in="SourceGraphic" dx="10" dy="9" />
+					<feColorMatrix result="matrixOut" in="offOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" />
+					<feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="1" />
+					<feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+				</filter>
+			</defs>
+			<rect width="120" height="90" x="20" y="20" fill="yellow" filter="url(#f1)" />
+		</svg>
+		<svg>
+			<defs>
+				<linearGradient id="rectGradient" gradientUnits="userSpaceOnUse" x1="20" y1="0" x2="220" y2="0">
+					<stop offset="0" style="stop-color:blue" />
+					<stop offset="0.25" style="stop-color:green" />
+					<stop offset="0.75" style="stop-color:yellow" />
+					<stop offset="1" style="stop-color:red" />
+				</linearGradient>
+				<linearGradient id="colorGradient" gradientUnits="userSpaceOnUse" x1="20" y1="0" x2="220" y2="0">
+					<stop offset="0" style="stop-color:yellow" />
+					<stop offset="0.25" style="stop-color:white" />
+					<stop offset="0.75" style="stop-color:darkblue" />
+					<stop offset="1" style="stop-color:slateblue" />
+				</linearGradient>
+			</defs>
+			<g style="enable-background:new">
+				<rect x="20" y="20" width="200" height="100" style="fill:url(#rectGradient)" />
+				<text x="38" y="80" style="fill:url(#colorGradient); font-size: 22px;">Change Font Color</text>
+			</g>
+		</svg>
+		<svg>
+			<rect width="20" height="20" x="20" y="20" fill="yellow">
+				<animate attributeName="width" attributeType="XML" begin="0s" dur="6s" fill="freeze" from="20" to="200" repeatCount="indefinite" />
+				<animate attributeName="height" attributeType="XML" begin="0s" dur="6s" fill="freeze" from="20" to="100" />
+			</rect>
+		</svg>
+		<svg>
+			<circle cx="120" cy="70" r="50" fill="#096" stroke-width="5" stroke="white" />
+		</svg>
+		<svg>
+			<ellipse cx="120" cy="70" rx="80" ry="50" fill="gray" stroke-width="6" stroke="orange" />
+		</svg>
+		<svg>
+			<ellipse cx="120" cy="70" rx="80" ry="50" fill="white">
+				<animate attributeType="CSS" attributeName="opacity" from="1" to="0.4" dur="2s" repeatCount="indefinite" />
+			</ellipse>
+		</svg>
+		<svg>
+			<ellipse cx="120" cy="70" rx="80" ry="50" fill="green">
+				<animate attributeType="CSS" attributeName="fill" from="gray" to="red" dur="2s" repeatCount="indefinite" />
+			</ellipse>
+		</svg>
+		<svg>
+			<polygon points="40,40 80,30 140,40 200,80 180,110 130,100 60,90 30,50" fill="green" stroke-width="4" stroke="yellow" />
+		</svg>
+		<svg>
+			<polygon points="95,20 60,110 140,50 45,50 125,110" fill="red" stroke-width="4" stroke="white" />
+		</svg>
+		<svg>
+			<polygon points="95,20 60,110 140,50 45,50 125,110" fill="red" stroke-width="4" stroke="white" fill-rule="evenodd" />
+		</svg>
+		<svg>
+			<line x1="30" y1="100" x2="200" y2="40" stroke-width="2" stroke="red" />
+		</svg>
+		<svg>
+			<polyline points="30,110 56,101 69,88 99,59 109,105 120,88 136,26 200,49" fill="blueviolet" stroke-width="1" stroke="red" />
+		</svg>
+		<svg>
+			<text x="20" y="40" stroke="white" stroke-width="2" transform="rotate(30 20,90)" style="font-size:22px">I LOVE SVG</text>
+		</svg>
+		<svg>
+			<g>
+				<text id="TextElement" x="20" y="20" fill="red">svg
+					<animateMotion path="M20 20 L60 80 L90 20 L110 60 L130 30 L160 90 " begin="1s" dur="10s" fill="freeze" />
+					<animateTransform attributeName="transform" attributeType="XML" type="scale" from="1" to="1.6" additive="sum" begin="1s" dur="10s" fill="freeze" /> 
+				</text>
+			</g>
+		</svg>
+		<svg>
+			<defs>
+				<path id="path1" d="M20,20 a1,1 0 0,0 158,10" />
+			</defs>
+			<text x="20" y="100" fill="white">
+				<textPath xlink:href="#path1">I love SVG And You love SVG Too</textPath>
+			</text>
+		</svg>
+		<svg>
+			<text x="20" y="40" fill="white">
+				<tspan>This is tspan as P</tspan>
+				<tspan y="70">This is tspan as P</tspan>
+				<tspan y="100" x="20">This is tspan as P</tspan>
+			</text>
+		</svg>
+		<svg>
+			<a xlink:href="http://www.runoob.com/svg/svg-examples.html" target="_blank">
+				<text x="40" y="80" fill="blue" style="font-size: 24px; text-decoration: underline;">This is a link</text>
+			</a>
+		</svg>
+		<svg>
+			<g stroke="yellowgreen" stroke-width="16">
+				<path stroke-linecap="butt" d="M30 30 L210 30" />
+				<path stroke-linecap="round" d="M30 70 L210 70" />
+				<path stroke-linecap="square" d="M30 110 L210 110" />
+			</g>
+		</svg>
+		<svg>
+			<g stroke="white" stroke-width="4">
+				<path stroke-dasharray="4,1" d="M30 30 L210 30" />
+				<path stroke-dasharray="4,4" d="M30 70 L210 70" />
+				<path stroke-dasharray="1,1,4,2,8,4,12,6,18,8,24,10,30,14,40,16" d="M30 110 L210 110" />
+			</g>
+		</svg>
+		<svg>
+			<path d="M20 40 L30 30 L40 40 L30 50 Z" fill="orange" stroke-width="1" stroke="red" />
+			<path d="M50 70 V140 Z" stroke-width="1" stroke="yellow" />
+			<path d="M50 20 H240 Z" stroke-width="1" stroke="yellow" />
+			<g font-size="24" font="sans-serif" fill="orange" stroke="red" text-anchor="middle">
+				<text x="80" y="38" dx="-10" dy="10">A</text>
+				<text x="70" y="48" dx="40">B</text>
+				<text x="70" y="48" dx="80">C</text>
+			</g>
+		</svg>
+		<svg>
+			<g fill="white" stroke-width="2" stroke="red">
+				<circle cx="70" cy="70" r="50" />
+				<polyline points="140,0 140,140" />
+				<polygon points="190,124 184,116 184,50 164,50 164,40 184,40 184,20 194,20 194,40 214,40 214,50 194,50 194,116" />
+			</g>
+		</svg>
+
+	</body>
+
+</html>

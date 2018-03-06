@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>mouseover</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box {
+				border: 1px solid #ccc;
+				position: relative;
+				overflow: hidden;
+				margin: 20px auto;
+			}
+			
+			#box img {
+				display: block;
+				position: absolute;
+				left: 0;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<img src="../../img/banner01.jpg" />
+			<img src="../../img/banner02.jpg" />
+			<img src="../../img/banner03.jpg" />
+			<img src="../../img/banner04.jpg" />
+		</div>
+		<script type="text/javascript">
+			window.onload = function() {
+				var box = document.getElementById('box');
+				var imgs = box.getElementsByTagName('img');
+				var imgWidth = imgs[0].offsetWidth;
+				var viewWidth = 200;
+				var imgLength = imgs.length;
+
+				box.style.width = imgWidth + viewWidth * (imgLength - 1) + 'px';
+				box.style.height = imgs[0].offsetHeight + 'px';
+
+				//重置位置
+				function imgReset() {
+					for(var i = 1; i < imgLength; i++) {
+						imgs[i].style.left = imgWidth + viewWidth * (i - 1) + 'px';
+					}
+				}
+				imgReset();
+
+				//绑定事件(立即执行)
+				for(var i = 0; i < imgLength; i++) {
+					(function(i) {
+						imgs[i].onmouseover = function() {
+							imgReset();
+							for(var j = 1; j <= i; j++) {
+								imgs[j].style.left = parseInt(imgs[j].style.left) - viewWidth + 'px';
+							}
+
+						}
+					})(i);
+				}
+
+			}
+		</script>
+	</body>
+
+</html>

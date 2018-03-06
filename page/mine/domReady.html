@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>domReady</title>
+		<script type="text/javascript">
+			window.onload = function() {
+				/*var title = document.getElementsByTagName('h1');
+				title[0].style.color='darkred';*/
+				console.log('onload');
+			};
+			/*
+			 * 问题：
+			 * dom加载是构建好dom树，但是构建完了，
+			 * 不一定元素内容都加载完了，不如图片还在加载中，这是添加的事件怎么处理
+			 */
+			//立即执行函数
+			(function() {
+				try {
+					var title = document.getElementsByTagName('h1');
+					title[0].style.color = 'darkred';
+					console.log('domReady');
+				} catch(e) {
+					setTimeout(arguments.callee, 1);
+					return;
+				}
+			}());
+		</script>
+	</head>
+
+	<body>
+		<div hidden="hidden">
+			<img src="../../img/banner01.jpg" />
+			<img src="../../img/banner02.jpg" />
+			<img src="../../img/banner03.jpg" />
+			<img src="../../img/banner04.jpg" />
+		</div>
+		<h1>这里是H1标签的内容</h1>
+		<img src="https://farm6.staticflickr.com/5023/5578283926_822e5e5791_m.jpg" />
+	</body>
+
+</html>

@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+/*
+ * Public
+ */
+
+
+/*color*/
+
+.color-white {
+	color: #fff;
+}
+
+.color-black {
+	color: #121212;
+}
+
+
+/*background-color*/
+
+.bgc-white {
+	background-color: #fff;
+}
+
+.bgc-black {
+	background-color: #000;
+}

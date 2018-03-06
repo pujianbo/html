@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>background</title>
+		<style type="text/css">
+			/*body {
+				background: url(../../img/banner04.jpg) no-repeat;
+				background-size: cover;
+			}
+			*/
+			
+			.box {
+				height: 144px;
+				width: 240px;
+				float: left;
+				margin: 10px;
+				padding: 20px;
+				color: white;
+				font-size: 14px;
+				line-height: 26px;
+				border: 1px solid gainsboro;
+			}
+			
+			.box01 {
+				padding: 0;
+				border: 20px solid gray;
+				border-image-source: url(../../img/box.jpg);
+				border-image-slice: 60 60 60 200;
+			}
+			
+			.box03 {
+				background-image: url(../../img/logo.png), url(../../img/banner04.jpg);
+				background-repeat: no-repeat;
+			}
+			
+			.box04 {
+				background-image: url(../../img/banner04.jpg);
+				background-repeat: no-repeat;
+				background-position: left 40px top 0;
+			}
+			
+			.box05 {
+				color: gray;
+				background: url(../../img/bookdetial.png) no-repeat;
+				background-origin: content-box;
+				background-size: 26px;
+				text-indent: 30px;
+			}
+			
+			.box06 {
+				background: -ms-linear-gradient(blue, red);
+				background: -moz-linear-gradient(blue, red);
+				background: -webkit-linear-gradient(blue, red);
+				background: linear-gradient(blue, red);
+			}
+			
+			.box07 {
+				background: linear-gradient(to right, black, green, blue, yellow, red);
+			}
+			
+			.box08 {
+				background: linear-gradient(to bottom right, blue, green, orange, red);
+			}
+			
+			.box09 {
+				background: linear-gradient(160deg, blue, green, orange, red);
+			}
+			
+			.box10 {
+				background: linear-gradient(blue 10%, green 40%, orange 70%, red 90%);
+			}
+			
+			.box11 {
+				background: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+			}
+			
+			.box12 {
+				background: repeating-linear-gradient(black 15%, blueviolet 25%);
+			}
+			
+			.box13 {
+				background: repeating-radial-gradient(black 15%, blueviolet 25%);
+			}
+			
+			.box14 {
+				background: radial-gradient(green 10%, blue 20%, red 30%, yellow 40%, gray);
+			}
+			
+			.box15 {
+				background: radial-gradient(circle, green 10%, blue 20%, red 30%, yellow 40%, gray);
+			}
+			
+			.box16 {
+				background: radial-gradient(closest-side, green 10%, blue 20%, red 30%, yellow 40%, gray);
+			}
+			
+			.box17 {
+				background: radial-gradient(closest-corner, green 10%, blue 20%, red 30%, yellow 40%, gray);
+			}
+			
+			.box18 {
+				background: linear-gradient(#fb3 50%, #58a 50%);
+				background-size: 100% 22px;
+			}
+			
+			.box19 {
+				background: linear-gradient(to right, #fb3 50%, #58a 0);
+				background-size: 21px 100%;
+			}
+			
+			.box20 {
+				background: linear-gradient(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0);
+				background-size: 30px 30px;
+			}
+			
+			.box21 {
+				background: repeating-linear-gradient(60deg, #fb3, #fb3 10px, #58a 0, #58a 30px);
+			}
+			
+			.box22 {
+				background: #58a;
+				background-image: repeating-linear-gradient(30deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 30px, transparent 0, transparent 60px);
+			}
+			
+			.box23 {
+				background: #58a;
+				background-image: linear-gradient(white 1px, transparent 0), linear-gradient(90deg, white 1px, transparent 0);
+				background-size: 21px 21px;
+			}
+			
+			.box24 {
+				background: linear-gradient(45deg, transparent 30px, #58a 0) left, linear-gradient(-45deg, transparent 30px, #666 0) right;
+				background-size: 50% 100%;
+				background-repeat: no-repeat;
+			}
+			
+			.box25 {
+				background: radial-gradient(circle at top left, transparent 30px, #58a 0) top left, radial-gradient(circle at top right, transparent 30px, #666 0) top right;
+				background-size: 50% 100%;
+				background-repeat: no-repeat;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box box01"></div>
+		<div class="box"><img src="../../img/box.jpg" height="100%" /></div>
+		<div class="box box03"></div>
+		<div class="box box04"></div>
+		<div class="box box05">
+			内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容...<br> background-origin: content-box;
+		</div>
+		<div class="box box06">background: <br>linear-gradient(blue, red);</div>
+		<div class="box box07">background: <br>linear-gradient(to right, black, green, blue, yellow, red);</div>
+		<div class="box box08">background: <br>linear-gradient(to bottom right, blue,green,orange,red);</div>
+		<div class="box box09">background: <br>linear-gradient(160deg, blue,green,orange,red);</div>
+		<div class="box box10">background: <br>linear-gradient(blue 10%,green 40%,orange 70%,red 90%);</div>
+		<div class="box box11">background: <br>linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));</div>
+		<div class="box box12">background: <br>repeating-linear-gradient(black 15%,blueviolet 25%);</div>
+		<div class="box box13">background: <br>repeating-radial-gradient(black 15%,blueviolet 25%);</div>
+		<div class="box box14">background: <br>radial-gradient(green 10%,blue 20%,red 30%,yellow 40%,gray);</div>
+		<div class="box box15">background: <br>radial-gradient(circle,green 10%,blue 20%,red 30%,yellow 40%,gray);</div>
+		<div class="box box16">background: <br>radial-gradient(closest-side,green 10%,blue 20%,red 30%,yellow 40%,gray);</div>
+		<div class="box box17">background: <br>radial-gradient(closest-corner,green 10%,blue 20%,red 30%,yellow 40%,gray);</div>
+		<div class="box box18">background: <br>linear-gradient(#fb3 50%,#58a 50%);<br>background-size:100% 22px;</div>
+		<div class="box box19">background: <br>linear-gradient(to right, #fb3 50%, #58a 0); <br>background-size: 21px 100%;</div>
+		<div class="box box20">background: <br>linear-gradient(45deg,#fb3 25%,#58a 0,#58a 50%,#fb3 0,#fb3 75%,#58a 0);<br>background-size:30px 30px;</div>
+		<div class="box box21">background: <br>repeating-linear-gradient(60deg, #fb3, #fb3 10px, #58a 0, #58a 30px);</div>
+		<div class="box box22">background: #58a;<br> background-image: <br>repeating-linear-gradient(30deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, .1) 30px, transparent 0, transparent 60px);</div>
+		<div class="box box23"></div>
+		<div class="box box24"></div>
+		<div class="box box25"></div>
+	</body>
+
+</html>

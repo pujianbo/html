@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>box</title>
+		<style>
+			body {
+				background-color: #ebebeb;
+				color: gray;
+			}
+			
+			.title {
+				height: 40px;
+				width: 200px;
+				background: white;
+				margin: 40px auto;
+				position: relative;
+				border-radius: 4px;
+				text-align: center;
+				line-height: 40px;
+			}
+			
+			.title:before {
+				content: "";
+				background: white;
+				position: absolute;
+				height: 20px;
+				width: 40px;
+				left: 0;
+				top: 50%;
+				margin: -10px 0 0 -12px;
+				border-radius: 6px;
+			}
+			
+			.title:after {
+				content: "";
+				background: white;
+				position: absolute;
+				height: 20px;
+				width: 40px;
+				right: 0;
+				top: 50%;
+				margin: -10px -12px 0 0;
+				border-radius: 6px;
+			}
+			/*second*/
+			
+			.outer {
+				width: 400px;
+				height: 250px;
+				padding: 5px;
+				margin: 20px auto;
+				position: relative;
+			}
+			
+			.child {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				bottom: 0px;
+				background-color: #fff;
+				line-height: 250px;
+				font-family: 'Microsoft YaHei';
+				text-align: center;
+				z-index: 2
+			}
+			
+			.outer:before,
+			.outer:after {
+				content: '';
+				z-index: 1;
+				width: 50%;
+				height: 3px;
+				position: absolute;
+				left: 10px;
+				bottom: 7px;
+				background-color: transparent;
+				box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+				-webkit-transform: rotate(-3deg);
+			}
+			
+			.outer:after {
+				left: auto;
+				right: 10px;
+				-webkit-transform: rotate(3deg)
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="title">标题内容</div>
+		<div class='outer'>
+			<div class='child'>
+				内容内容内容内容内容内容
+			</div>
+		</div>
+	</body>
+
+</html>

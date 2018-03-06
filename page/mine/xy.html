@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>坐标</title>
+		<style>
+			#test {
+				background-color: red;
+				width: 200px;
+				height: 200px;
+				margin: 50px auto;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div id="test"></div>
+		<script type="text/javascript">
+			var test = document.getElementById('test');
+			test.onclick = function(e) {
+				console.clear();
+				console.log(e.clientX + ',' + e.clientY + '	> client'); //相对于浏览器
+				console.log(e.screenX + ',' + e.screenY + '	> screen'); //相对于屏幕，浏览器左边边距
+				console.log(e.offsetX + ',' + e.offsetY + '	> offsetX'); //相对于事件源
+				console.log(e.pageX + ',' + e.pageY + '	> pagetX'); //相对于网页
+				console.log(e.x + ',' + e.y + '	> x'); //IE的属性，CSS动态定位的最内层包容元素
+
+				//x,y,用于IE，
+				//当前元素没有设置position时，等于clientXY
+				//当前元素有设置position时，等于pageXY
+				//其他浏览器始终等于clientXY
+			}
+
+			console.log(screenX + ',' + screenY + '	> screenX'); //浏览器距离显示屏左边宽度
+			console.log(screenLeft + ',' + screenTop + ' > screenLeft'); //功能同上
+		</script>
+
+	</body>
+
+</html>

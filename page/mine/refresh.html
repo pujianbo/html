@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+
+		<!--清理缓存-->
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+		<!--//清理缓存-->
+
+		<!--手机视图，苹果电话识别禁止-->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no" />
+		<!--//手机视图，苹果电话识别禁止-->
+
+		<!--网站关键字描述-->
+		<meta name="keywords" content="keywords">
+		<meta name="description" content="description">
+		<!--//网站关键字描述-->
+
+		<title>historyBack</title>
+		<script type="text/javascript">
+			window.onload = function() {
+				//返回检查
+				var sign = document.getElementById("sign");
+				sign.value == "1" ? alert("从其他页面返回,不能检测刷新") : sign.value = 1;
+
+				//刷新检查
+				if(sessionStorage.pagecount) {
+					sessionStorage.pagecount = Number(sessionStorage.pagecount) + 1;
+					document.getElementById('refresh').innerHTML = "第  " + sessionStorage.pagecount + " 次刷新";
+				} else {
+					sessionStorage.pagecount = 0;
+					document.getElementById('refresh').innerHTML = "第 1 次访问";
+				}
+				
+			}
+		</script>
+	</head>
+
+	<body>
+		<input type="hidden" id="sign" value="0" />
+		<a href="http://www.baidu.com">点击跳转到其他页面,然后返回！</a>
+		<div id="refresh"></div>
+	</body>
+
+</html>

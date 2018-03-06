@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>nodetype</title>
+	</head>
+
+	<body>
+		<span id="test">value<!--commentNode--></span>
+		<script type="text/javascript">
+			//获得元素
+			var test = document.getElementById('test');
+			//不兼容数字常量，IE
+			/*if(test.nodeType==Node.ELEMENT_NODE)
+			{
+				document.write('this is element node');
+			}*/
+
+			//换成数值常量
+			if(test.nodeType == 1) {
+				//元素节点
+				console.log(test.nodeName + ',' + test.nodeValue); //SPAN,null
+				//属性节点
+				//test = test.attributes[0];
+				var attrNode = test.attributes['id'];
+				console.log(attrNode.nodeName + ',' + attrNode.nodeValue); //id,test
+				//文本节点
+				var textNode = test.childNodes[0];
+				console.log(textNode.nodeName + ',' + textNode.nodeValue); //#text,value
+				//注释节点
+				var commentNode = test.childNodes[1];
+				console.log(commentNode.nodeName + ',' + commentNode.nodeValue); //#comment,commentNode
+				//文档节点
+				var docNode = document.doctype;
+				console.log(docNode.nodeName + ',' + docNode.nodeValue); //html,null
+				//片段节点(js代码)
+				var fragNode = document.createDocumentFragment();
+				console.log(fragNode.nodeName + ',' + fragNode.nodeValue); //#document-fragment,null
+			}
+		</script>
+	</body>
+
+</html>

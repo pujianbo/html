@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>dotBg</title>
+		<script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			body {
+				overflow: hidden;
+			}
+			
+			.bgbox {
+				background: url(../../img/bgdot.jpg) no-repeat;
+				background-size: cover;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				z-index: -1;
+			}
+			
+			.boxs {
+				width: 1px;
+				height: 1px;
+				background: blue;
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				border-radius: 50%;
+				transition: all ease-in 0.4s;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="bgbox"></div>
+		<div class="boxs"></div>
+		<script type="text/javascript">
+			var values = '';
+			var max = 100;
+			for(var i = 10; i < max; i += 1) {
+				for(var j = max / 5; j < i; j++) {
+					var left = Math.random().toFixed(4) * i * j + 'px';
+					var right = Math.random().toFixed(4) * i * j + 'px';
+					var blur = Math.random().toFixed(1) * 4 + 'px';
+					var spread = Math.random().toFixed(1) * 2 + 'px';
+					var color = "#" + ("00000" + ((Math.random() * 16777215 + 0.5) >> 0).toString(16)).slice(-6);
+					values += left + ' ' + right + ' ' + blur + ' ' + spread + ' ' + color + ',';
+				}
+			}
+			//values='red'
+			values = values.substring(0, values.length - 1);
+			//console.log(values.split(','));
+
+			$('.boxs').css({
+				'-webkit-box-shadow': values,
+				'-moz-box-shadow': values,
+				'box-shadow': values
+			});
+
+			var mLeft = null;
+			var mTop = null;
+			window.onmousemove = function() {
+				var wX = window.event.clientX;
+				var wY = window.event.clientX;
+				if(mLeft == null) {
+					mLeft = wX;
+					mTop = wY;
+				}
+				wX = wX - mLeft;
+				wY = wY - mTop;
+
+				if(wY > 20) wY = 20;
+				if(wX > 20) wX = 20;
+				if(wY < -20) wY = -20;
+				if(wX < -20) wX = -20;
+
+				$('.boxs').css('margin-top', -wX + 'px');
+				$('.boxs').css('margin-left', -wY + 'px');
+			};
+		</script>
+	</body>
+
+</html>

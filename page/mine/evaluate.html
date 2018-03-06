@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>evaluate</title>
+		<link rel="stylesheet" type="text/css" href="../../css/font.css" />
+		<style type="text/css">
+			.bar-star {
+				width: 136px;
+				height: 24px;
+				position: relative;
+				cursor: pointer;
+				color: gray;
+				overflow: hidden;
+			}
+			
+			.bar-star:after {
+				content: "\f005\ \f005\ \f005\ \f005\ \f005";
+				font-size: 24px;
+			}
+			
+			.bar-star .star-length {
+				height: 100%;
+				width: 0;
+				overflow: hidden;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+			}
+			
+			.bar-star .star-length:after {
+				content: "\f005\ \f005\ \f005\ \f005\ \f005";
+				font-size: 24px;
+				color: red;
+			}
+			
+			.bar-star input {
+				display: none;
+			}
+			
+			.bar-star label {
+				display: block;
+				height: 100%;
+				width: 20%;
+				position: absolute;
+				top: 0;
+				z-index: 2;
+				cursor: pointer;
+			}
+			
+			.lbl-star1 {
+				left: 0;
+			}
+			
+			.lbl-star2 {
+				left: 20%;
+			}
+			
+			.lbl-star3 {
+				left: 40%;
+			}
+			
+			.lbl-star4 {
+				left: 60%;
+			}
+			
+			.lbl-star5 {
+				left: 80%;
+			}
+			
+			.rdo-star1:checked~ .star-length {
+				width: 20%!important;
+			}
+			
+			.rdo-star2:checked~ .star-length {
+				width: 40%!important;
+			}
+			
+			.rdo-star3:checked~ .star-length {
+				width: 60%!important;
+			}
+			
+			.rdo-star4:checked~ .star-length {
+				width: 80%!important;
+			}
+			
+			.rdo-star5:checked~ .star-length {
+				width: 100%!important;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<form>
+			<table cellpadding="0" cellspacing="10">
+				<tbody>
+					<tr>
+						<td>响应速度</td>
+						<td>
+							<div class="fa bar-star">
+								<input type="radio" class="rdo-star1" id="rdo-sudu1" name="sudu" value="1" checked="checked">
+								<input type="radio" class="rdo-star2" id="rdo-sudu2" name="sudu" value="2">
+								<input type="radio" class="rdo-star3" id="rdo-sudu3" name="sudu" value="3">
+								<input type="radio" class="rdo-star4" id="rdo-sudu4" name="sudu" value="4">
+								<input type="radio" class="rdo-star5" id="rdo-sudu5" name="sudu" value="5">
+								<label class="fa lbl-star1" for="rdo-sudu1"></label>
+								<label class="fa lbl-star2" for="rdo-sudu2"></label>
+								<label class="fa lbl-star3" for="rdo-sudu3"></label>
+								<label class="fa lbl-star4" for="rdo-sudu4"></label>
+								<label class="fa lbl-star5" for="rdo-sudu5"></label>
+								<div class="fa star-length"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>服务态度</td>
+						<td>
+							<div class="fa bar-star">
+								<input type="radio" class="rdo-star1" id="rdo-fuwu1" name="fuwu" value="1">
+								<input type="radio" class="rdo-star2" id="rdo-fuwu2" name="fuwu" value="2" checked="checked">
+								<input type="radio" class="rdo-star3" id="rdo-fuwu3" name="fuwu" value="3">
+								<input type="radio" class="rdo-star4" id="rdo-fuwu4" name="fuwu" value="4">
+								<input type="radio" class="rdo-star5" id="rdo-fuwu5" name="fuwu" value="5">
+								<label class="fa lbl-star1" for="rdo-fuwu1"></label>
+								<label class="fa lbl-star2" for="rdo-fuwu2"></label>
+								<label class="fa lbl-star3" for="rdo-fuwu3"></label>
+								<label class="fa lbl-star4" for="rdo-fuwu4"></label>
+								<label class="fa lbl-star5" for="rdo-fuwu5"></label>
+								<div class="fa star-length"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>处理结果</td>
+						<td>
+							<div class="fa bar-star">
+								<input type="radio" class="rdo-star1" id="rdo-jieguo1" name="jieguo" value="1">
+								<input type="radio" class="rdo-star2" id="rdo-jieguo2" name="jieguo" value="2">
+								<input type="radio" class="rdo-star3" id="rdo-jieguo3" name="jieguo" value="3" checked="checked">
+								<input type="radio" class="rdo-star4" id="rdo-jieguo4" name="jieguo" value="4">
+								<input type="radio" class="rdo-star5" id="rdo-jieguo5" name="jieguo" value="5">
+								<label class="fa lbl-star1" for="rdo-jieguo1"></label>
+								<label class="fa lbl-star2" for="rdo-jieguo2"></label>
+								<label class="fa lbl-star3" for="rdo-jieguo3"></label>
+								<label class="fa lbl-star4" for="rdo-jieguo4"></label>
+								<label class="fa lbl-star5" for="rdo-jieguo5"></label>
+								<div class="fa star-length"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="submit" value="保 存" /></td>
+					</tr>
+				</tbody>
+			</table>
+
+		</form>
+	</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<style type="text/css">
+			#list {
+				width: 1000px;
+				margin: 20px auto;
+				border: 1px solid gainsboro;
+				padding: 10px;
+			}
+			
+			#list:after {
+				clear: both;
+				content: '';
+				display: table;
+			}
+			
+			#list>li {
+				float: left;
+			}
+			
+			#list>li a {
+				display: block;
+				padding: 10px;
+			}
+			
+			#list-data {
+				display: none;
+			}
+		</style>
+		<script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<span id:sdsdsd="sfsdfsd">
+			
+		</span>
+		<ul id="list"></ul>
+		<div id="list-data">
+			<a href="#"><img src="../../img/fall/3.jpg"></a>
+			<a href="#"><img src="../../img/fall/4.jpg"></a>
+			<a href="#"><img src="../../img/fall/6.jpg"></a>
+			<a href="#"><img src="../../img/fall/1.jpg"></a>
+			<a href="#"><img src="../../img/fall/2.jpg"></a>
+			<a href="#"><img src="../../img/fall/3.jpg"></a>
+			<a href="#"><img src="../../img/fall/4.jpg"></a>
+			<a href="#"><img src="../../img/fall/5.jpg"></a>
+			<a href="#"><img src="../../img/fall/6.jpg"></a>
+			<a href="#"><img src="../../img/fall/2.jpg"></a>
+			<a href="#"><img src="../../img/fall/3.jpg"></a>
+			<a href="#"><img src="../../img/fall/4.jpg"></a>
+			<a href="#"><img src="../../img/fall/5.jpg"></a>
+			<a href="#"><img src="../../img/fall/1.jpg"></a>
+			<a href="#"><img src="../../img/fall/3.jpg"></a>
+			<a href="#"><img src="../../img/fall/6.jpg"></a>
+			<a href="#"><img src="../../img/fall/2.jpg"></a>
+			<a href="#"><img src="../../img/fall/3.jpg"></a>
+			<a href="#"><img src="../../img/fall/4.jpg"></a>
+			<a href="#"><img src="../../img/fall/6.jpg"></a>
+			<a href="#"><img src="../../img/fall/1.jpg"></a>
+			<a href="#"><img src="../../img/fall/2.jpg"></a>
+			<a href="#"><img src="../../img/fall/3.jpg"></a>
+			<a href="#"><img src="../../img/fall/4.jpg"></a>
+			<a href="#"><img src="../../img/fall/5.jpg"></a>
+			<a href="#"><img src="../../img/fall/6.jpg"></a>
+			<a href="#"><img src="../../img/fall/2.jpg"></a>
+			<a href="#"><img src="../../img/fall/3.jpg"></a>
+			<a href="#"><img src="../../img/fall/4.jpg"></a>
+			<a href="#"><img src="../../img/fall/5.jpg"></a>
+			<a href="#"><img src="../../img/fall/1.jpg"></a>
+			<a href="#"><img src="../../img/fall/3.jpg"></a>
+			<a href="#"><img src="../../img/fall/6.jpg"></a>
+			<a href="#"><img src="../../img/fall/2.jpg"></a>
+			<a href="#"><img src="../../img/fall/3.jpg"></a>
+			<a href="#"><img src="../../img/fall/4.jpg"></a>
+			<a href="#"><img src="../../img/fall/5.jpg"></a>
+			<a href="#"><img src="../../img/fall/6.jpg"></a>
+		</div>
+		<script type="text/javascript">
+			//设置列数
+			var colNum = 4;
+			var $list = $('#list');
+			var setHtml = '';
+			for(var i = 0; i < colNum; i++) {
+				setHtml += '<li></li>';
+			}
+			$list.html(setHtml).find('li').css('width', 100 / colNum + '%');
+
+			function addList() {
+				var addIndex = 0;
+				var listHeight = $list.find('li:first').height();
+				$list.find('li').each(function() {
+					var thisHeight = $(this).height();
+					if(thisHeight < listHeight) {
+						listHeight = thisHeight;
+						addIndex = $(this).index();
+					}
+				});
+
+				$('#list-data a:first').appendTo('#list li:eq(' + addIndex + ')');
+				setTimeout(addList, 800);
+			}
+			addList();
+		</script>
+	</body>
+
+</html>

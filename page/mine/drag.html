@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>drag</title>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			/*
+			 * 转化为拖拽模块
+			 */
+			$.fn.isDrag = function(obj) {
+				var mousedown = false;
+				var left, top;
+				var tag = $(this);
+				if(obj !== undefined) tag = $(obj);
+				$(this).mousedown(function(event) {
+					mousedown = true;
+					left = event.pageX - tag.offset().left;
+					top = event.pageY - tag.offset().top;
+					tag.css({
+						"position": "fixed",
+						"left": $(this).offset().left,
+						"top": $(this).offset().top,
+						"opacity": "0.6",
+					})
+				});
+				$(document).mousemove(function(event) {
+					if(mousedown) {
+						tag.css({
+							"left": event.pageX - left,
+							"top": event.pageY - top
+						})
+					}
+				}).mouseup(function(event) {
+					mousedown = false;
+					tag.fadeTo("600", 1);
+				})
+			}
+		</script>
+		<style type="text/css">
+			/*模块拖拽*/
+			
+			.box {
+				height: 300px;
+				width: 200px;
+				background: green;
+			}
+			
+			.drag {
+				width: 100%;
+				height: 40px;
+				background: blueviolet;
+				cursor: move;
+			}
+		</style>
+
+		<script type="text/javascript">
+			$(function() {
+				$(".drag").isDrag(".box");
+			});
+		</script>
+	</head>
+
+	<body>
+		<!--模块拖拽-->
+		<div class="box">
+			<div class="drag"></div>
+		</div>
+	</body>
+
+</html>

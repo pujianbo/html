@@ -1,0 +1,64 @@
+$pagehover: #15bbd4;
+.page {
+    max-width: 1200px;
+    margin: 50px auto;
+    text-align: center;
+    font-size: 16px;
+    line-height: 30px;
+    a,
+    span {
+        display: inline-block;
+        height: 30px;
+        min-width: 10px;
+        border-radius: 2px;
+        background-color: #fff;
+        padding: 0 10px;
+        margin: 0 5px;
+        border: 1px solid transparent;
+        cursor: pointer;
+    }
+    em {
+        font-style: normal;
+        margin-right: 15px;
+        display: inline-block;
+        b {
+            color: $pagehover;
+            font-weight: normal;
+        }
+    }
+    .current {
+        cursor: not-allowed;
+    }
+    .num {
+        border: 1px solid #e6e6e6;
+        color: #666666;
+    }
+    .prev,
+    .next {
+        background-color: #e3e3e3;
+        color: #b4b4b4;
+    }
+    .num:hover,
+    .prev:hover,
+    .next:hover,
+    .current {
+        border-color: $pagehover;
+        background-color: $pagehover;
+        color: #fff;
+    }
+}
+
+/*from error*/
+
+$errorColor:#ea2913;
+label.error
+small.error{
+    color: $errorColor;
+    margin-left: 20px;
+}
+
+input.error,
+select.error,
+textarea.error{
+    border-color: $errorColor;
+}

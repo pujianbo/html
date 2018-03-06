@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>overhang</title>
+
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/overhang.css" />
+		<style type="text/css">
+			#btns {
+				position: absolute;
+				bottom: 40%;
+				left: 0;
+				right: 0;
+				padding: 6em 0;
+				text-align: center;
+				background-color: grey;
+			}
+			
+			#btns button {
+				background-color: brown;
+				color: white;
+				font-size: 18px;
+				padding: 0.6em 1em;
+				border-radius: 4px;
+				margin: 0 0.6em;
+			}
+		</style>
+
+		<script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/overhang.js" type="text/javascript" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			$(function() {
+
+				//成功提示
+				$('#btns button').eq(0).on('click', function() {
+					$("body").overhang({
+						type: "success",
+						message: "Woohoo! It works!"
+					});
+				});
+				//错误提示
+				$('#btns button').eq(1).on('click', function() {
+					$("body").overhang({
+						type: "error",
+						message: "Whoops! Something went wrong!",
+						closeConfirm: true
+					});
+				});
+				//信息提示
+				$('#btns button').eq(2).on('click', function() {
+					$("body").overhang({
+						type: "info",
+						message: "This message will close in 5 seconds!",
+						duration: 5,
+						upper: true
+					});
+				});
+				//警告提示
+				$('#btns button').eq(3).on('click', function() {
+					$("body").overhang({
+						type: "warn",
+						message: "A user has reported you!",
+						duration: 3
+					});
+
+				});
+				//输入框
+				$('#btns button').eq(4).on('click', function() {
+					$("body").overhang({
+						type: "prompt",
+						message: "What's your name?"
+					});
+				});
+				//确认框
+				$('#btns button').eq(5).on('click', function() {
+					$("body").overhang({
+						type: "confirm",
+						message: "Are you sure?"
+					});
+				});
+				//用户自定义
+				$('#btns button').eq(6).on('click', function() {
+					$("body").overhang({
+						custom: true,
+						textColor: "#FCE4EC",
+						primary: "#F06292",
+						accent: "#FCE4EC",
+						message: "This is my custom message "
+					});
+				});
+				//回调函数
+				$('#btns button').eq(7).on('click', function() {
+					$("body").overhang({
+						type: "confirm",
+						primary: "#40D47E",
+						accent: "#27AE60",
+						yesColor: "#3498DB",
+						message: "Do you want to continue?",
+						callback: function() {
+							var selection = $("body").data("overhangConfirm");
+							var response = selection ? "yes" : "no";
+							alert("You made your selection of " + response);
+						}
+					});
+				});
+				//HTML定义
+				var snapchatIcon = '<i class="fa fa-snapchat-ghost" style="color: #FFFC00" aria-hidden="true"></i>';
+				var snapchatNote = ' Add "thepaulkr" on snapchat!';
+				$('#btns button').eq(8).on('click', function() {
+					$("body").overhang({
+						type: "confirm",
+						primary: "#333333",
+						accent: "#FFFC00",
+						message: snapchatIcon + snapchatNote,
+						custom: true,
+						html: true,
+						callback: function() {
+							var selection = $("body").data("overhangConfirm");
+							if(selection) {
+								window.open("https:});//www.w2bc.com/shili/", "_blank");
+							} else {
+								alert("Maybe next time then...");
+							}
+						}
+					});
+				});
+
+				//默认操作点击看效果
+				$('#btns button').eq(0).click();
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="btns">
+			<button>成功提示</button>
+			<button>错误提示</button>
+			<button>信息提示</button>
+			<button>警告提示</button>
+			<button>输入框</button>
+			<button>确认框</button>
+			<button>用户自定义</button>
+			<button>回调函数</button>
+			<button>HTML定义</button>
+		</div>
+	</body>
+
+</html>

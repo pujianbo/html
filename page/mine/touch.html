@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+		<title>touch</title>
+		<script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/touch.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function() {
+				$("body").swipe({
+					//滑动结束后事件
+					//swipe: function(event, direction, distance, duration, fingerCount) {
+					//	$(this).text("你用" + fingerCount + "个手指以" + duration + "毫秒的速度向" + direction + "滑动了" + distance + "像素 ");
+					//},
+
+					//滑动过程中事件
+					swipeStatus: function(event, phase, direction, distance, duration, fingerCount) {
+						$(this).text("你用" + fingerCount + "个手指以" + duration + "毫秒的速度向" + direction + "滑动了" + distance + "像素 " + "你在" + phase + "中");
+					},
+				});
+			});
+		</script>
+	</head>
+
+	<body style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; font-size: 24px;">
+		鼠标点击、或者手指滑动
+	</body>
+
+</html>

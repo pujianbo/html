@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>anonymous</title>
+		<script type="text/javascript">
+			(function(a) {
+				document.writeln(a + '<br />'); //输出123,使用（）运算符
+			})(123);
+
+			(function(a) {
+				document.writeln(a + '<br />'); //输出1234，使用（）运算符
+			}(1234));
+
+			! function(a) {
+				document.writeln(a + '<br />'); //输出12345,使用！运算符
+			}(12345); +
+
+			function(a) {
+				document.writeln(a + '<br />'); //输出123456,使用+运算符
+			}(123456); -
+
+			function(a) {
+				document.writeln(a + '<br />'); //输出1234567,使用-运算符
+			}(1234567);
+
+			var fn = function(a) {
+				document.writeln(a + '<br />'); //输出12345678，使用=运算符
+			}(12345678);
+		</script>
+	</head>
+
+	<body>
+		<br /><br /> 匿名函数（立即执行）
+	</body>
+
+</html>

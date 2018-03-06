@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas</title>
+		<style type="text/css">
+			body {
+				background: seashell;
+			}
+			
+			canvas {
+				background: blueviolet;
+				margin: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas></canvas>
+		<canvas></canvas>
+		<canvas></canvas>
+		<canvas></canvas>
+		<canvas></canvas>
+		<canvas></canvas>
+		<canvas></canvas>
+		<canvas></canvas>
+		<canvas></canvas>
+		<script>
+			/**
+			 * 
+			 * 
+			 * 
+			 * 第一块画布
+			 */
+			//获取画布元素
+			var canvas = document.getElementsByTagName("canvas");
+			canvas[0].width = 380;
+			canvas[0].height = 260;
+			var context = canvas[0].getContext("2d");
+			//实践表明在不设施fillStyle下的默认fillStyle=black
+			context.fillRect(20, 20, 100, 100);
+			//实践表明在不设施strokeStyle下的默认strokeStyle=black
+			context.strokeRect(140, 20, 100, 100);
+			//设置纯色
+			context.fillStyle = "red";
+			context.strokeStyle = "blue";
+			context.fillRect(20, 140, 100, 100);
+			context.strokeRect(140, 140, 100, 100);
+			//设置透明度实践证明透明度值0-1之间值越低，越透明，值>=1时为纯色，值<=0时为完全透明
+			context.fillStyle = "rgba(255,0,0,0.2)";
+			context.strokeStyle = "rgba(255,0,0,0.2)";
+			context.fillRect(260, 20, 100, 100);
+			context.strokeRect(260, 140, 100, 100);
+			//中间模块
+			context.fillStyle = "rgba(255,255,255,0.4)";
+			context.fillRect(70, 70, 240, 120);
+			//清理模块
+			context.clearRect(90, 90, 200, 80);
+			/**
+			 * 
+			 * 
+			 * 
+			 * 第二块画布
+			 */
+			canvas[1].width = 260;
+			canvas[1].height = 260;
+			context = canvas[1].getContext("2d");
+			//分隔开，便于圆形观察,为画圆做准备
+			context.fillStyle = "gray";
+			context.fillRect(0, 0, 130, 130);
+			context.fillStyle = "sienna";
+			context.fillRect(130, 130, 130, 130);
+			context.fillStyle = "hotpink";
+			context.fillRect(130, 0, 130, 130);
+			context.fillStyle = "white";
+			//画文字时依照底部为单位，在上面填写文字
+			context.fillText("π（Math.PI=3.1415926）为180度，周长2πR", 10, 20);
+			//圆弧context.arc(x, y, radius, starAngle,endAngle, anticlockwise)
+			//x:圆心的x坐标
+			//y:圆心的y坐标
+			//straAngle:开始角度
+			//endAngle:结束角度
+			//anticlockwise:是否逆时针（true）为逆时针，(false)为顺时针.默认顺时针
+			//度数：并非是0-360度，而是以π（Math.PI=3.1415926）为180度，类似算圆的周长=2πr;
+			context.beginPath();
+			context.arc(130, 130, 100, 0, Math.PI * 1.5, false);
+			context.closePath(); /*不关闭路径路径会一直保留下去，当然也可以利用这个特点做出意想不到的效果*/
+			context.fillStyle = "yellow";
+			context.fill();
+			context.strokeStyle = "black";
+			context.stroke();
+			/**
+			 * 
+			 * 
+			 * 
+			 * 第三块画布
+			 */
+			canvas[2].width = 260;
+			canvas[2].height = 260;
+			context = canvas[2].getContext("2d");
+			context.fillStyle = "cyan";
+			context.strokeStyle = "black";
+			context.lineTo(40, 40); //着力点，如果是第一个，则是开始点，如果前面有则是结束点
+			context.lineTo(220, 40);
+			context.lineTo(220, 80);
+			context.lineTo(40, 80);
+			context.lineTo(40, 40); //回到起到，这是结束
+			context.moveTo(60, 120); //移动画笔
+			context.lineTo(200, 200);
+			context.moveTo(200, 120);
+			context.lineTo(60, 200);
+			context.stroke(); //把路径绘制出来
+			context.fill(); //如果路径可以填充就填充
+			/**
+			 * 
+			 * 
+			 * 
+			 * 第四块画布
+			 */
+			canvas[3].width = 260;
+			canvas[3].height = 260;
+			context = canvas[3].getContext("2d");
+			var n = 0;
+			var dx = 130;
+			var dy = 130;
+			var s = 100;
+			context.beginPath();
+			context.fillStyle = 'yellow';
+			context.strokeStyle = 'gray';
+			var x = Math.sin(0);
+			var y = Math.cos(0);
+			var dig = Math.PI / 15 * 11;
+			for(var i = 0; i < 30; i++) {
+				var x = Math.sin(i * dig);
+				var y = Math.cos(i * dig);
+				context.lineTo(dx + x * s, dy + y * s);
+			}
+			context.closePath();
+			context.fill();
+			context.stroke();
+			/**
+			 * 
+			 * 
+			 * 
+			 * 第五块画布
+			 */
+			canvas[4].width = 260;
+			canvas[4].height = 260;
+			content = canvas[4].getContext("2d");
+			//createLinearGradient(xStart,yStart,xEnd,yEnd)
+			//xstart:渐变开始点x坐标
+			//ystart:渐变开始点y坐标
+			//xEnd:渐变结束点x坐标
+			//yEnd:渐变结束点y坐标
+			var colors = content.createLinearGradient(0, 0, 180, 180);
+			colors.addColorStop(0, 'red');
+			colors.addColorStop(0.5, 'yellow');
+			colors.addColorStop(1, 'blue');
+			content.strokeStyle = colors;
+			content.strokeRect(20, 20, 220, 220);
+			content.fillStyle = colors;
+			content.fillRect(40, 40, 180, 180);
+			/**
+			 * 
+			 * 
+			 * 
+			 * 第六块画布
+			 */
+			canvas[5].width = 260;
+			canvas[5].height = 260;
+			content = canvas[5].getContext("2d");
+			//createRadialGradient(xStart,yStart,radiusStart,xEnd,yEnd,radiusEnd)
+			//xStart:发散开始圆心x坐标
+			//yStart:发散开始圆心y坐标
+			//radiusStart:发散开始圆的半径
+			//xEnd:发散结束圆心的x坐标
+			//yEnd:发散结束圆心的y坐标
+			//radiusEnd:发散结束圆的半径
+			var colorChange = content.createRadialGradient(130, 130, 0, 130, 130, 100);
+			colorChange.addColorStop(0, 'rgb(255,0,0)');
+			colorChange.addColorStop(1, "rgb(50,0,0)");
+			content.fillStyle = colorChange;
+			content.beginPath();
+			content.arc(130, 130, 100, 0, Math.PI * 2, false);
+			content.closePath();
+			content.fill();
+			/**
+			 * 
+			 * 
+			 * 
+			 * 第七块画布
+			 */
+			canvas[6].width = 380;
+			canvas[6].height = 260;
+			content = canvas[6].getContext("2d");
+			colorChange = content.createRadialGradient(20, 130, 0, 340, 130, 90);
+			colorChange.addColorStop(0, 'red');
+			colorChange.addColorStop(0.2, 'blue');
+			colorChange.addColorStop(0.4, 'green');
+			colorChange.addColorStop(0.6, 'yellow');
+			colorChange.addColorStop(0.5, 'orange');
+			colorChange.addColorStop(1, 'black');
+			content.fillStyle = colorChange;
+			content.fillRect(20, 20, 340, 220);
+			/**
+			 * 
+			 * 
+			 * 
+			 * 第八块画布
+			 */
+			canvas[7].width = 260;
+			canvas[7].height = 260;
+			content = canvas[7].getContext("2d");
+			content.save();
+			content.fillStyle = "red";
+			content.fillRect(20, 20, 40, 40);
+			//移动
+			content.fillStyle = "orange"; //根据上一步的路径走
+			content.translate(40, 40);
+			content.fillRect(20, 20, 40, 40);
+			//再移动
+			content.fillStyle = "orangered";
+			content.translate(40, 40);
+			content.fillRect(20, 20, 40, 40);
+			//继续移动
+			content.fillStyle = "darkgreen";
+			content.translate(40, 40);
+			content.fillRect(20, 20, 40, 40);
+			//旋转
+			//content.save();
+			content.fillStyle = "yellow";
+			content.rotate(Math.PI / 4);
+			content.fillRect(20, 20, 40, 40);
+			//缩放
+			content.fillStyle = "orange";
+			content.scale(1.4, 1.4);
+			content.fillRect(20, 20, 40, 40);
+			/**
+			 * 
+			 * 
+			 * 
+			 * 第九块画布
+			 */
+			canvas[8].width = 570;
+			canvas[8].height = 260;
+			context = canvas[8].getContext("2d");
+			var img = new Image();
+			img.src = "../../img/banner01.jpg";
+			img.onload = function() {
+				context.drawImage(img, 20, 20, 530, 220);
+				context.drawImage(img, 20, 20, 100, 60);
+			}
+			var img2 = new Image();
+			img2.src = "../../img/banner02.jpg";
+			img2.onload = function() {
+				context.drawImage(img2, 450, 180, 100, 60);
+			}
+			img2.onerror = function() {
+				console.error('图片地址有误：' + img2.src);
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		<title>box-shadow</title>
+		<style type="text/css">
+			.obj {
+				margin: 50px;
+				float: left;
+				width: 100px;
+				height: 100px;
+				border: 1px solid gray;
+				background: blueviolet;
+				border-radius: 6px;
+			}
+			
+			.box-shadow-1 {
+				-webkit-box-shadow: 6px 6px;
+			}
+			
+			.box-shadow-2 {
+				-webkit-box-shadow: 6px 6px brown;
+			}
+			
+			.box-shadow-3 {
+				-webkit-box-shadow: 0 0 0px 6px rgba(10, 10, 10, 0.2);
+			}
+			
+			.box-shadow-4 {
+				-webkit-box-shadow: 0 0 10px 6px darkorchid;
+			}
+			
+			.box-shadow-5 {
+				-webkit-box-shadow: inset 0 0 10px rgba(10, 10, 10, 0.2);
+			}
+			
+			.box-shadow-6 {
+				box-shadow: -10px 0 10px red, /*左边阴影*/
+				10px 0 10px yellow, /*右边阴影*/
+				0 -10px 10px blue, /*顶部阴影*/
+				0 10px 10px green;
+				/*底边阴影*/
+			}
+			
+			.box-shadow-7 {
+				box-shadow: 0 0 0px 10px slateblue, 0 0 0px 20px gray;
+			}
+			
+			.box-shadow-8 {
+				box-shadow: 0 0 0px 20px slateblue, 0 0 0px 10px gray;
+			}
+			
+			.outer {
+				width: 100px;
+				height: 100px;
+				border: 1px solid blue;
+				background: cyan;
+			}
+			
+			.inner {
+				width: 50%;
+				height: 50%;
+				background-color: blueviolet;
+				-webkit-box-shadow: 50px 50px saddlebrown;
+			}
+		</style>
+	</head>
+
+	<body>
+		<br /><br />
+		<center>{box-shadow:inset x-offset y-offset blur-radius spread-radius color} </center>
+		<center>{box-shadow:投影方式 X轴偏移量 Y轴偏移量 阴影模糊半径 阴影扩展半径 阴影颜色}</center>
+		<div class="obj outer">
+			<div class="inner"></div>
+		</div><br />
+		<div class="obj box-shadow-1"></div>
+		<div class="obj  box-shadow-2"></div>
+		<div class="obj  box-shadow-3"></div>
+		<div class="obj  box-shadow-4"></div>
+		<div class="obj  box-shadow-5"></div>
+		<div class="obj  box-shadow-6"></div>
+		<div class="obj  box-shadow-7"></div>
+		<div class="obj  box-shadow-8"></div>
+	</body>
+
+</html>

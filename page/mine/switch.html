@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>switch</title>
+		<style type="text/css">
+			body {
+				background: seashell;
+			}
+			
+			.switch .box {
+				height: 30px;
+				width: 80px;
+				border-radius: 15px;
+				border: 1px solid #9c9a97;
+				background: #db5705;
+				cursor: pointer;
+				position: relative;
+			}
+			
+			.switch .circle {
+				position: absolute;
+				left: 1px;
+				top: 1px;
+				height: 28px;
+				width: 28px;
+				border-radius: 50%;
+				background: #FFF;
+				transition: all 0.4s ease-in;
+			}
+			
+			.switch .word {
+				padding: 0 10px;
+				line-height: 30px;
+				font-weight: bold;
+				color: #FFF;
+				font-size: 12px;
+			}
+			
+			.switch .word .left {
+				float: left;
+			}
+			
+			.switch .word .right {
+				float: right;
+			}
+			
+			.switch #cbxswitch:checked~ .box {
+				background: #db1f05;
+			}
+			
+			.switch #cbxswitch:checked~ .box .circle {
+				margin-left: 50px;
+				transition: all 0.4s ease-in;
+			}
+		</style>
+	</head>
+
+	<body>
+		<label class="switch" for="cbxswitch">
+			<input type="checkbox" id="cbxswitch" hidden="hidden">
+			<div class="box">
+				<div class="word">
+					<span class="left">ON</span>
+					<span class="right">OFF</span>
+				</div>
+				<div class="circle"></div>
+			</div>
+		</label>
+		<br /><br />
+		<input id="bswtch" type="checkbox" checked>
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap-switch.css" />
+		<script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/bootstrap-switch.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function(argument) {
+				$('#bswtch').bootstrapSwitch();
+			})
+		</script>
+	</body>
+
+</html>

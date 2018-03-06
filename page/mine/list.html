@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>list</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul,
+			li {
+				list-style: none;
+			}
+			
+			div {
+				width: 780px;
+				margin: 20px auto;
+			}
+			
+			ul:after {
+				display: table;
+				clear: both;
+				content: '';
+			}
+			
+			li {
+				width: 180px;
+				height: 180px;
+				background-color: salmon;
+				margin: 0 20px 20px 0;
+				float: left;
+			}
+			/*方法一*/
+			
+			.way1 ul {
+				margin-right: -20px;
+			}
+			/*方法二*/
+			
+			.way2 {
+				overflow: hidden;
+			}
+			
+			.way2 ul {
+				width: 800px;
+			}
+		</style>
+	</head>
+	<div class="way1">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+
+	<div class="way2">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+
+	<body>
+	</body>
+
+</html>

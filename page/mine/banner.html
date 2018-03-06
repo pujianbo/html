@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>banner css</title>
+		<style type="text/css">
+			.banner {
+				position: relative;
+				width: 400px;
+				height: 300px;
+				overflow: hidden;
+			}
+			
+			.banner .list {
+				display: table;
+				position: absolute;
+				left: 0;
+				top: 0;
+				z-index: 2;
+				animation: movebanner 20s 4s ease-in-out infinite;
+			}
+			
+			.banner .list a {
+				display: table-cell;
+			}
+			
+			.banner .position {
+				position: absolute;
+				bottom: 10px;
+				left: 0;
+				z-index: 4;
+				text-align: center;
+				width: 100%;
+			}
+			
+			.banner .position label {
+				height: 12px;
+				width: 12px;
+				cursor: pointer;
+				border-radius: 50%;
+				background: white;
+				display: inline-block;
+			}
+			
+			.banner input[type=radio] {
+				display: none;
+			}
+			
+			.banner input#posi1:checked~ .list {
+				left: 0;
+				animation-duration: 0s;
+				transition: left 1s ease-in-out;
+			}
+			
+			.banner input#posi2:checked~ .list {
+				left: -100%;
+				animation-duration: 0s;
+				transition: left 1s ease-in-out;
+			}
+			
+			.banner input#posi3:checked~ .list {
+				left: -200%;
+				animation-duration: 0s;
+				transition: left 1s ease-in-out;
+			}
+			
+			.banner input#posi4:checked~ .list {
+				left: -300%;
+				animation-duration: 0s;
+				transition: left 1s ease-in-out;
+			}
+			
+			.banner input#posi1:checked~ .position label:nth-child(1) {
+				background: red;
+			}
+			
+			.banner input#posi2:checked~ .position label:nth-child(2) {
+				background: red;
+			}
+			
+			.banner input#posi3:checked~ .position label:nth-child(3) {
+				background: red;
+			}
+			
+			.banner input#posi4:checked~ .position label:nth-child(4) {
+				background: red;
+			}
+			
+			@keyframes movebanner {
+				0% {
+					left: 0
+				}
+				5% {
+					left: -100%
+				}
+				25% {
+					left: -100%
+				}
+				30% {
+					left: -200%
+				}
+				50% {
+					left: -200%
+				}
+				55% {
+					left: -300%
+				}
+				75% {
+					left: -300%
+				}
+				80% {
+					left: 0
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="banner">
+			<input type="radio" name="posi" id="posi1" />
+			<input type="radio" name="posi" id="posi2" />
+			<input type="radio" name="posi" id="posi3" />
+			<input type="radio" name="posi" id="posi4" />
+			<div class="list">
+				<a href="#"><img src="../../img/banner01.jpg"></a>
+				<a href="#"><img src="../../img/banner02.jpg"></a>
+				<a href="#"><img src="../../img/banner03.jpg"></a>
+				<a href="#"><img src="../../img/banner04.jpg"></a>
+			</div>
+			<div class="position">
+				<label for="posi1"></label>
+				<label for="posi2"></label>
+				<label for="posi3"></label>
+				<label for="posi4"></label>
+			</div>
+		</div>
+	</body>
+
+</html>

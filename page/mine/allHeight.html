@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>allHeight</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul {
+				list-style: none;
+			}
+			
+			.height {
+				width: 400px;
+				border-left: 400px solid skyblue;
+				background-color: burlywood;
+				line-height: 60px;
+				text-align: center;
+				margin: 20px 0;
+			}
+			
+			.height:after {
+				content: '';
+				clear: both;
+				display: table;
+			}
+			
+			.height .left {
+				margin-left: -400px;
+				float: left;
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="height">
+			<div class="left">
+				<ul>
+					<li>item</li>
+				</ul>
+			</div>
+			<div class="right">
+				<ul>
+					<li>item</li>
+					<li>item</li>
+				</ul>
+			</div>
+		</div>
+		<div class="height">
+			<div class="left">
+				<ul>
+					<li>item</li>
+					<li>item</li>
+					<li>item</li>
+				</ul>
+			</div>
+			<div class="right">
+				<ul>
+					<li>item</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>

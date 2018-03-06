@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>text-shadow</title>
+		<style type="text/css">
+			div {
+				margin: 20px;
+				width: 400px;
+				box-sizing: border-box;
+				float: left;
+				line-height: 60px;
+				font-size: 48px;
+				padding: 20px 60px;
+				border: 1px solid blueviolet;
+				background: green;
+				color: blueviolet;
+				font-weight: bold;
+			}
+			
+			.txt01 {
+				text-shadow: 0 0 10px deepskyblue;
+			}
+			
+			.txt02 {
+				text-shadow: 2px 2px 4px gray;
+			}
+			
+			.txt03 {
+				text-shadow: 0 0px 6px rgba(111, 21, 21, 0.1);
+				color: gainsboro;
+			}
+			
+			.txt04 {
+				text-shadow: 2px -2px 6px ghostwhite;
+			}
+			
+			.txt05 {
+				color: gray;
+				text-shadow: 0 0 5px saddlebrown, 0 0 10px skyblue, 0 0 15px red, 0 0 40px red;
+			}
+			
+			.txt06 {
+				color: #fff;
+				text-shadow: 1px 1px rgba(197, 223, 248, 0.8), 2px 2px rgba(197, 223, 248, 0.8), 3px 3px rgba(197, 223, 248, 0.8), 4px 4px rgba(197, 223, 248, 0.8), 5px 5px rgba(197, 223, 248, 0.8);
+			}
+			
+			.txt07 {
+				text-shadow: 1px 1px white, 2px 2px gray;
+			}
+			
+			.txt08 {
+				text-align: center;
+				text-align-last: left;
+				font-size: 16px;
+				line-height: 20px;
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="obj txt01">TEXT-SHADOW</div>
+		<div class="obj txt02">TEXT-SHADOW</div>
+		<div class="obj txt03">TEXT-SHADOW</div>
+		<div class="obj txt04">TEXT-SHADOW</div>
+		<div class="obj txt05">TEXT-SHADOW</div>
+		<div class="obj txt06">TEXT-SHADOW</div>
+		<div class="obj txt07">TEXT-SHADOW</div>
+		<div class="obj txt08">
+			text-align-last<br>text-align-last: left wordlanglang;
+		</div>
+		<div class="obj txt08">
+			text-align-last:left or right? text-align-last: left wordlanglanglanglang;
+		</div>
+	</body>
+
+</html>

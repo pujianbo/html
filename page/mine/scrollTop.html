@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>scrollTop</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul>li {
+				background-color: sandybrown;
+				text-align: center;
+				line-height: 600px;
+				height: 600px;
+				list-style: none;
+				font-size: 36px;
+			}
+			
+			ul>li:nth-child(2n) {
+				background-color: lightblue;
+			}
+			#to-top{
+				width: 60px;
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+				position: fixed;
+				bottom: 60px;
+				right: 60px;
+				background-color: lightcoral;
+				color: #fff;
+				font-size: 24px;
+				cursor: pointer;
+			}
+		</style>
+		<script src="../../js/scrollTop.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<ul>
+			<li>item1</li>
+			<li>item2</li>
+			<li>item3</li>
+			<li>item4</li>
+			<li>item5</li>
+			<li>item6</li>
+			<li>item7</li>
+			<li>item8</li>
+			<li>item9</li>
+			<li>item10</li>
+		</ul>
+
+		<div id="to-top">TOP</div>
+	</body>
+
+</html>

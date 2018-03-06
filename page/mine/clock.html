@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>clock</title>
+		<!--<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>-->
+		<script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.clock {
+				height: 300px;
+				width: 300px;
+				background: silver;
+				color: slategray;
+				border-radius: 50%;
+				text-align: center;
+				line-height: 300px;
+				position: relative;
+				box-shadow: inset 0 0 0 20px sienna;
+				/*add*/
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: auto;
+			}
+			
+			.center {
+				display: inline-block;
+				height: 14px;
+				width: 14px;
+				border-radius: 50%;
+				background: white;
+				position: absolute;
+				z-index: 4;
+				left: 143px;
+				top: 143px;
+			}
+			
+			.clock label {
+				position: absolute;
+				display: block;
+				overflow: hidden;
+				outline: none;
+			}
+			
+			.clock i {
+				height: 100%;
+				width: 50%;
+				display: block;
+				float: right;
+				border-radius: 8px;
+			}
+			
+			.shi {
+				width: 130px;
+				height: 6px;
+				left: 85px;
+				top: 147px;
+				z-index: 1;
+			}
+			
+			.fen {
+				width: 160px;
+				height: 4px;
+				left: 70px;
+				top: 148px;
+				z-index: 2;
+			}
+			
+			.miao {
+				height: 2px;
+				width: 210px;
+				left: 45px;
+				top: 149px;
+				z-index: 3;
+			}
+			
+			.shi i {
+				background: grey;
+			}
+			
+			.fen i {
+				background: sienna;
+			}
+			
+			.miao i {
+				background: salmon;
+			}
+			
+			.clock em {
+				font-size: 24px;
+				font-style: normal;
+				height: 28px;
+				display: block;
+				width: 28px;
+				line-height: 28px;
+				font-weight: bold;
+				position: absolute;
+			}
+			
+			.num1 {
+				left: 136px;
+				top: 30px;
+			}
+			
+			.num2 {
+				right: 30px;
+				top: 136px;
+			}
+			
+			.num3 {
+				left: 136px;
+				bottom: 30px;
+			}
+			
+			.num4 {
+				left: 30px;
+				top: 136px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<!--模块拖拽-->
+		<div class="clock">
+			<label class="shi"><i></i></label>
+			<label class="fen"><i></i></label>
+			<label class="miao"><i></i></label>
+			<span class="center"></span>
+			<em class="num1">12</em>
+			<em class="num2">3</em>
+			<em class="num3">6</em>
+			<em class="num4">9</em>
+		</div>
+		<script type="text/javascript">
+			function newTime(){
+				var nowDate = new Date();
+				var shi = nowDate.getHours() % 12 * 30 - 90;
+				var fen = nowDate.getMinutes() * 6 - 90;
+				var miao = nowDate.getSeconds() * 6 - 90;
+				$(".miao").css("transform", "rotate(" + miao + "deg)");
+				$(".fen").css("transform", "rotate(" + fen + "deg)");
+				$(".shi").css("transform", "rotate(" + shi + "deg)");
+			}
+			newTime();
+			setInterval(function() {
+				newTime();
+			}, 1000)
+		</script>
+	</body>
+
+</html>

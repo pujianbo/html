@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>verticalMiddle</title>
+		<style type="text/css">
+			p {
+				line-height: 300px;
+				background-color: goldenrod;
+				font-size: 200px;
+				position: relative;
+				margin: 10px;
+				text-align: center;
+			}
+			
+			p:before {
+				position: absolute;
+				content: '';
+				border-bottom: 1px solid blue;
+				top: 50%;
+				left: 0;
+				right: 0;
+			}
+			
+			p img {
+				vertical-align: middle;
+				height: 240px;
+			}
+			
+			.box {
+				font-size: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<p>
+			X<img src="../../img/banner01.jpg" />
+		</p>
+		<p class="box">
+			<img src="../../img/banner01.jpg" />
+		</p>
+	</body>
+
+</html>

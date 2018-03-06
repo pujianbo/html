@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<style type="text/css">
+			ul,
+			li {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			
+			.title,
+			.content {
+				border: 1px solid silver;
+				overflow: hidden;
+				display: inline-block;
+			}
+			
+			.title li {
+				float: left;
+				padding: 1em 6em;
+				border-right: 1px solid silver;
+			}
+			
+			.title li:last-child {
+				border-right: 0;
+			}
+			
+			.title li:hover,
+			.title li.active {
+				background: blueviolet;
+				color: white;
+				cursor: pointer;
+			}
+			
+			.content {
+				height: 200px;
+				width: 800px;
+				display: block;
+				text-align: center;
+				line-height: 200px;
+				font-size: 48px;
+			}
+			
+			.content li {
+				height: 100%;
+				width: 100%;
+				float: left;
+				display: none;
+			}
+			
+			.content li:first-child {
+				display: block;
+			}
+		</style>
+
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$(".title li").click(function() {
+					$(this).addClass("active").siblings().removeClass("active");
+					$(".content li").eq($(this).index()).show().siblings().hide();
+				});
+			})
+		</script>
+	</head>
+
+	<body>
+		<ul class="title">
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<ul class="content">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</body>
+
+</html>

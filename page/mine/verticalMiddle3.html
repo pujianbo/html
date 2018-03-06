@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>verticalMiddle</title>
+		<style type="text/css">
+			p {
+				background-color: palegoldenrod;
+				height: 300px;
+				text-align: center;
+				vertical-align: middle;
+				width: 600px;
+				margin-top: 10px;
+			}
+			
+			p span {
+				display: inline-block;
+				width: 120px;
+				background-color: seagreen;
+				vertical-align: middle;
+				color: #FFF;
+				padding: 10px;
+			}
+			
+			.p01 {
+				display: table-cell;
+			}
+			
+			.p02 i {
+				display: inline-block;
+				vertical-align: middle;
+				height: 100%;
+				width: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<p class="p01">
+			<span>文字高度不固定</span>
+		</p>
+		<p class="p02">
+			<span>文字高度不固定</span>
+			<i></i>
+		</p>
+	</body>
+
+</html>

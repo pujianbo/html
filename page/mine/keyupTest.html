@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>keyupTest</title>
+		<style type="text/css">
+			input {
+				border: 1px solid #005580;
+				padding: 0.5em;
+				width: 60%;
+			}
+			
+			div {
+				margin-top: 40px;
+				line-height: 20px;
+				height: 200px;
+				overflow: hidden;
+			}
+		</style>
+		<script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			function word(str) {
+				var wordTag = document.getElementsByTagName("div")[0];
+				wordTag.innerHTML = "<br />" + str + ": " + txt.value + wordTag.innerHTML;
+			}
+			var bindName = "input";
+			$(function() {
+				if(navigator.userAgent.indexOf("MSIE") != -1) {
+					bindName = "propertychange"; //判断是否为IE内核 IE内核的事件名称要改为propertychange
+				}
+				$('#txt').bind(bindName, function() {
+					word('bindName');
+				});
+				$('#txt').focus();
+			})
+		</script>
+	</head>
+
+	<body>
+		<input type="text" id="txt" onkeydown="word('onkeydown')" onkeypress="word('onkeypress')" onkeyup="word('onkeyup')" placeholder="keydown、keypress、keyup测试 -- 输入中文看看" />
+		<div></div>
+	</body>
+
+</html>

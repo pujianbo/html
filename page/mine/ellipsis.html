@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<style type="text/css">
+			div {
+				width: 200px;
+				margin: 20px;
+				background: seashell;
+				line-height: 1.6;
+				border: 1px solid #ccc;
+				padding: .6em;
+				max-height: 7.4em;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-line-clamp: 5;
+				-webkit-box-orient: vertical;
+			}
+			
+			.clamp {
+				position: relative;
+			}
+			
+			.clamp:after {
+				position: absolute;
+				right: .6em;
+				bottom: .4em;
+				content: '...';
+				background: inherit;
+				padding-left: .5em;
+				width: 2em;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			多行文本超出省略号，多行文本超出省略号，多行文本超出省略号，多行文本超出省略号，多行文本超出省略号，多行文本超出省略号 多行文本超出省略号，多行文本超出省略号，多行文本超出省略号，多行文本超出省略号，多行文本超出省略号，多行文本超出省略号
+		</div>
+		<div class="clamp">
+			多行文本超出省略号，多行文本超出省略号，多行文本超出省略号，多行文本超出省略号，多行文本超出省略号，多行文本超出省略号 多行文本超出省略号，多行文本超出省略号，多行文本超出省略号，多行文本超出省略号，多行文本超出省略号，多行文本超出省略号
+		</div>
+	</body>
+
+</html>

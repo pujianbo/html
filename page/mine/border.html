@@ -1,0 +1,319 @@
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="keywords" content="keywords">
+		<meta name="description" content="description">
+		<title>border</title>
+		<style type="text/css">
+			div.box {
+				float: left;
+				margin: 20px;
+				background: lavender;
+				padding: 40px;
+				height: 100px;
+			}
+			
+			.test1 {
+				width: 0;
+				height: 0;
+				border-width: 50px;
+				border-style: solid;
+				border-color: plum beige yellowgreen grey;
+			}
+			
+			.test2 {
+				width: 0;
+				height: 0;
+				border-width: 70px 20px 30px 80px;
+				border-style: solid;
+				border-color: plum beige yellowgreen grey;
+			}
+			
+			.test3 {
+				width: 0;
+				height: 0;
+				border-width: 50px;
+				border-style: solid;
+				border-color: transparent transparent transparent plum;
+			}
+			
+			.test4 {
+				height: 0;
+				width: 60px;
+				border-style: solid;
+				border-width: 0 30px 100px 30px;
+				border-color: transparent transparent plum transparent;
+			}
+			
+			.test5 {
+				width: 50px;
+				height: 50px;
+				background: gray;
+				border-width: 25px;
+				border-radius: 50%;
+				border-style: solid;
+				border-color: silver skyblue slategray goldenrod;
+			}
+			
+			.test6 {
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				background: slategray;
+				border: 22px dotted skyblue;
+			}
+			
+			.test7 {
+				width: 90px;
+				height: 0;
+				color: white;
+				border-width: 14px 4px;
+				line-height: 0px;
+				text-align: center;
+				background: tomato;
+				border-style: solid;
+				border-color: transparent lavender;
+				margin-top: 30px;
+			}
+			
+			#star-five {
+				margin: 18px 0;
+				position: relative;
+				display: block;
+				color: plum;
+				width: 0px;
+				height: 0px;
+				border-right: 80px solid transparent;
+				border-bottom: 50px solid plum;
+				border-left: 73px solid transparent;
+				-moz-transform: rotate(35deg);
+				-webkit-transform: rotate(35deg);
+				-ms-transform: rotate(35deg);
+				-o-transform: rotate(35deg);
+			}
+			
+			#star-five:before {
+				border-bottom: 60px solid plum;
+				border-left: 22px solid transparent;
+				border-right: 22px solid transparent;
+				position: absolute;
+				height: 0;
+				width: 0;
+				top: -38px;
+				left: -44px;
+				display: block;
+				content: '';
+				-webkit-transform: rotate(-35deg);
+				-moz-transform: rotate(-35deg);
+				-ms-transform: rotate(-35deg);
+				-o-transform: rotate(-35deg);
+			}
+			
+			#star-five:after {
+				position: absolute;
+				display: block;
+				color: plum;
+				top: 3px;
+				left: -77px;
+				width: 0px;
+				height: 0px;
+				border-right: 73px solid transparent;
+				border-bottom: 50px solid plum;
+				border-left: 80px solid transparent;
+				-webkit-transform: rotate(-70deg);
+				-moz-transform: rotate(-70deg);
+				-ms-transform: rotate(-70deg);
+				-o-transform: rotate(-70deg);
+				content: '';
+			}
+			
+			#talkbubble {
+				width: 120px;
+				height: 80px;
+				background: plum;
+				position: relative;
+				-moz-border-radius: 10px;
+				-webkit-border-radius: 10px;
+				border-radius: 10px;
+			}
+			
+			#talkbubble:before {
+				content: "";
+				position: absolute;
+				right: 100%;
+				top: 26px;
+				width: 0;
+				height: 0;
+				border-top: 13px solid transparent;
+				border-right: 26px solid plum;
+				border-bottom: 13px solid transparent;
+			}
+			
+			#yin-yang {
+				width: 96px;
+				height: 48px;
+				background: #eee;
+				border-color: plum;
+				border-style: solid;
+				border-width: 2px 2px 50px 2px;
+				border-radius: 100%;
+				position: relative;
+			}
+			
+			#yin-yang:before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 0;
+				background: #eee;
+				border: 18px solid plum;
+				border-radius: 100%;
+				width: 12px;
+				height: 12px;
+			}
+			
+			#yin-yang:after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				background: plum;
+				border: 18px solid #eee;
+				border-radius: 100%;
+				width: 12px;
+				height: 12px;
+			}
+			
+			#pacman {
+				width: 0px;
+				height: 0px;
+				border-right: 60px solid transparent;
+				border-top: 60px solid plum;
+				border-left: 60px solid plum;
+				border-bottom: 60px solid plum;
+				border-top-left-radius: 60px;
+				border-top-right-radius: 60px;
+				border-bottom-left-radius: 60px;
+				border-bottom-right-radius: 60px;
+			}
+			
+			#heart {
+				position: relative;
+				width: 100px;
+				height: 90px;
+			}
+			
+			#heart:before,
+			#heart:after {
+				position: absolute;
+				content: "";
+				left: 50px;
+				top: 0;
+				width: 50px;
+				height: 80px;
+				background: plum;
+				-moz-border-radius: 50px 50px 0 0;
+				border-radius: 50px 50px 0 0;
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				-o-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+				-webkit-transform-origin: 0 100%;
+				-moz-transform-origin: 0 100%;
+				-ms-transform-origin: 0 100%;
+				-o-transform-origin: 0 100%;
+				transform-origin: 0 100%;
+			}
+			
+			#heart:after {
+				left: 0;
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				transform: rotate(45deg);
+				-webkit-transform-origin: 100% 100%;
+				-moz-transform-origin: 100% 100%;
+				-ms-transform-origin: 100% 100%;
+				-o-transform-origin: 100% 100%;
+				transform-origin: 100% 100%;
+			}
+			
+			#cut-diamond {
+				border-style: solid;
+				border-color: transparent transparent plum transparent;
+				border-width: 0 25px 25px 25px;
+				height: 0;
+				width: 50px;
+				position: relative;
+				margin: 20px 0 50px 0;
+			}
+			
+			#cut-diamond:after {
+				content: "";
+				position: absolute;
+				top: 25px;
+				left: -25px;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-color: plum transparent transparent transparent;
+				border-width: 70px 50px 0 50px;
+			}
+		</style>
+		<script type="text/javascript">
+			function newWindow() {
+				window.open("https://www.baidu.com", "windowbox", "height=400,width=360,top=0,left=0,resizable=no,toolbar=no,location=no")
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="box">
+			<div class="test1"></div>
+		</div>
+		<div class="box">
+			<div class="test2"></div>
+		</div>
+		<div class="box">
+			<div class="test3"></div>
+		</div>
+		<div class="box">
+			<div class="test4"></div>
+		</div>
+		<div class="box">
+			<div class="test5"></div>
+		</div>
+		<div class="box">
+			<div class="test6"></div>
+		</div>
+		<div class="box">
+			<div class="test7">标题信息</div>
+		</div>
+		<div class="box">
+			<div id="star-five"></div>
+		</div>
+		<div class="box">
+			<div id="pacman"></div>
+		</div>
+		<div class="box">
+			<div id="heart"></div>
+		</div>
+		<div class="box">
+			<div id="talkbubble"></div>
+		</div>
+		<div class="box">
+			<div id="yin-yang"></div>
+		</div>
+		<div class="box">
+			<div id="cut-diamond"></div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>transform</title>
+		<style type="text/css">
+			div {
+				height: 100px;
+				width: 100px;
+				background: blueviolet;
+				float: left;
+				margin: 40px;
+			}
+			
+			.box01 {
+				-ms-transform: rotate(45deg);
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				/*rotate：旋转，使运动*/
+				transform: rotate(45deg);
+				/*个浏览器内核不一致，所以在解决兼容性问题上最好写全,旋转中心即水平垂直中心*/
+			}
+			
+			.box02 {
+				transform: rotateX(45deg) rotateY(45deg);
+				/*在X轴上旋转45度后再Y轴旋转45度*/
+			}
+			
+			.box03 {
+				transform: rotateX(45deg);
+				transform: rotateY(45deg);
+				/*覆盖上一个*/
+			}
+			
+			.box04 div {
+				margin: 0;
+				background: yellowgreen;
+				transform: translate(10px, 10px);
+				/*translate：翻译、转换、平移*/
+				/*transform: translateX(20px) translateY(10px);*/
+				/*其效果同上*/
+				/*transform: translateY(20px);*/
+				/*重置上面的属性，即覆盖原来的设置*/
+				/*transform: matrix(1, 0, 0, 1, 10, 20);*/
+			}
+			
+			.box05 div {
+				margin: 0;
+				background: yellow;
+				transform: scale(0.5);
+				/*scale：规模、测量、缩放比例*/
+				/*相对于水平垂直中心进行缩放，无需调节位置*/
+				/*transform: scaleX(0.5) scaleY(0.5);*/
+				/*效果同上*/
+				/*transform-origin: left bottom;*/
+				/*origin：起源、根源、起始点*/
+			}
+			
+			.box06 {
+				-ms-transform: skew(45deg, 45deg);
+				-moz-transform: skew(45deg, 45deg);
+				-webkit-transform: skew(45deg, 45deg);
+				transform: skew(20deg, 20deg);
+				/*skew：倾斜、扭曲、歪斜*/
+			}
+			
+			.box07 div {
+				background: white;
+				margin: 0;
+				-webkit-transform: matrix(0.6, 0, 0, 0.4, 10, 20) -moz-transform: matrix(0.6, 0, 0, 0.4, 10, 20);
+				-ms-transform: matrix(0.6, 0, 0, 0.4, 10, 20);
+				-o-transform: matrix(0.6, 0, 0, 0.4, 10, 20);
+				transform: matrix(0.6, 0, 0, 0.4, 10, 20);
+				/*matrix(宽度缩放，0，0，高度缩放，X轴水平位移，Y轴垂直位移)*/
+			}
+			
+			.box08 {
+				-webkit-transform: matrix(0.866025, 0.500000, -0.500000, 0.866025, 0, 0) -moz-transform: matrix(0.866025, 0.500000, -0.500000, 0.866025, 0, 0);
+				-ms-transform: matrix(0.866025, 0.500000, -0.500000, 0.866025, 0, 0);
+				-o-transform: matrix(0.866025, 0.500000, -0.500000, 0.866025, 0, 0);
+				transform: matrix(0.866025, 0.500000, -0.500000, 0.866025, 0, 0);
+				/*matrix(宽度缩放,X轴旋转，Y轴旋转，高度缩放，X轴水平位移，Y轴垂直位移)*/
+				/*matrix(cosθ,sinθ,-sinθ,cosθ,0,0)*/
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box01"></div>
+		<div class="box02"></div>
+		<div class="box03"></div>
+		<div class="box04">
+			<div></div>
+		</div>
+		<div class="box05">
+			<div></div>
+		</div>
+		<div class="box06"></div>
+		<div class="box07">
+			<div></div>
+		</div>
+		<div class="box08"></div>
+	</body>
+
+</html>

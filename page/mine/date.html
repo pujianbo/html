@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>validate</title>
+		<style type="text/css">
+			input {
+				padding: 0.4em;
+				border: 1px solid gray;
+			}
+			
+			input:focus {
+				outline: 0;
+			}
+			
+			label {
+				padding-left: 1em;
+			}
+			
+			td {
+				padding: 0.4em;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="../../css/date.css" />
+		<script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/date.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<form action="validate.html" id="form">
+			<table>
+				<tr>
+					<td>设置时间</td>
+					<td>
+						<input type="text" name="timeSet" id="timeSet" placeholder="timeSet" />
+					</td>
+				</tr>
+				<tr>
+					<td>开始时间</td>
+					<td>
+						<input type="text" name="timeStart" id="timeStart" placeholder="timeStart" />
+					</td>
+				</tr>
+				<tr>
+					<td>结束时间</td>
+					<td>
+						<input type="text" name="timeEnd" id="timeEnd" placeholder="timeEnd" />
+					</td>
+				</tr>
+			</table>
+		</form>
+		<script type="text/javascript">
+			$('#timeSet').datetimepicker({
+				lang: 'ch',
+				timepicker: false,
+				format: 'Y-m-d'
+			});
+			var timeStart = function(currentDateTime) {
+				var timeEnd = $("#timeEnd").val().replace(/\-/g, "/");
+				var maxTime = '23:59';
+				if(currentDateTime.getDate() == timeEnd.split(" ")[0].split("/")[2])
+					maxTime = timeEnd.split(" ")[1];
+				if(timeEnd != "")
+					this.setOptions({
+						maxDate: timeEnd.split(" ")[0],
+						maxTime: maxTime
+					});
+			};
+			var timeEnd = function(currentDateTime) {
+				var timeStart = $("#timeStart").val().replace(/\-/g, "/");
+				var minTime = '00:00';
+				if(currentDateTime.getDate() == timeStart.split(" ")[0].split("/")[2])
+					minTime = timeStart.split(" ")[1];
+				this.setOptions({
+					minDate: timeStart.split(" ")[0],
+					minTime: minTime
+				});
+			};
+
+			$('#timeStart').datetimepicker({
+				lang: 'ch',
+				format: 'Y-m-d H:i',
+				minDate: false,
+				onChangeDateTime: timeStart,
+				onShow: timeStart
+			});
+			$('#timeEnd').datetimepicker({
+				lang: 'ch',
+				format: 'Y-m-d H:i',
+				onChangeDateTime: timeEnd,
+				onShow: timeEnd
+			});
+		</script>
+	</body>
+
+</html>

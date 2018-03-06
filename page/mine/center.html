@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>center</title>
+		<style type="text/css">
+			/*
+			 * 表格测试
+			 */
+			
+			.table {
+				display: table;
+				width: 100%;
+				background: violet;
+				color: white;
+				margin: 10px auto;
+			}
+			
+			.tr {
+				display: table-row;
+			}
+			
+			.tb-cell {
+				vertical-align: middle;
+				display: table-cell;
+				text-align: center;
+			}
+			
+			.tbcellbox {
+				width: 80px;
+				height: 40px;
+				background: blueviolet;
+			}
+			
+			.tb-box {
+				height: 200px;
+			}
+			
+			.content {
+				display: inline-block;
+			}
+			/*
+			 * 水平垂直居中
+			 */
+			
+			.box {
+				border: 1px solid darkgray;
+				width: 160px;
+				height: 160px;
+				float: left;
+				margin-right: 20px;
+				box-sizing: border-box;
+			}
+			
+			.box .minbox {
+				height: 50px;
+				width: 50px;
+				background: slateblue;
+			}
+			/*方式一*/
+			
+			.boxlhe {
+				text-align: center;
+			}
+			
+			.boxlhe .lhe {
+				display: inline-block;
+				margin-top: 55px;
+			}
+			/*方法二*/
+			
+			.trafrm {
+				position: relative;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			/*方式三*/
+			
+			.boxabst {
+				position: relative;
+			}
+			
+			.boxabst .absolute {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -25px;
+				margin-top: -25px;
+			}
+			/*方式四*/
+			
+			.boxrm {
+				writing-mode: vertical-lr;
+			}
+			
+			.boxrm .minbox {
+				margin: auto 55px;
+			}
+			/*方式五*/
+			
+			.boxtb {
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+				clear: both;
+				float: none;
+			}
+			
+			.boxtb .tbcell {
+				display: inline-block;
+			}
+		</style>
+
+		<body>
+			<!--表格测试-->
+			<div class="table">
+				<div class="tb-cell">
+					<div class="tbcellbox"></div>
+				</div>
+				<div class="tb-cell" style="width: 100%;">100%</div>
+				<div class="tb-cell">
+					<div class="tbcellbox"></div>
+				</div>
+			</div>
+			<div class="table tb-box">
+				<div class="tb-cell">
+					<div class="content">
+						改变#table的宽高，内容都会水平垂直居中<br /> 原理是：表格原理
+						<br /> 1、外层转化为display：table
+						<br /> 2、中层转化为display：table-cell
+						<br /> 3、里面转化为display：inline-block
+					</div>
+				</div>
+			</div>
+			<div class="table">
+				<div class="tr">
+					<div class="tb-cell" style="width: 200px; height: 60px; background: blueviolet;">统一宽度</div>
+					<div class="tb-cell" style="width: 400px;"></div>
+				</div>
+				<div class="tr">
+					<div class="tb-cell" style=" height: 60px; background: salmon;">统一宽度</div>
+					<div class="tb-cell" style="width: 400px;"></div>
+				</div>
+			</div>
+			<!--//表格测试-->
+
+			<!--水平垂直居中-->
+			<div class="box boxlhe">
+				<div class="minbox lhe"></div>
+			</div>
+			<div class="box">
+				<div class="minbox trafrm"></div>
+			</div>
+			<div class="box boxabst">
+				<div class="minbox absolute"></div>
+			</div>
+			<div class="box boxrm">
+				<div class="minbox"></div>
+			</div>
+			<div class="box boxtb">
+				<div class="minbox tbcell"></div>
+			</div>
+
+			<!--水平垂直居中-->
+		</body>
+
+</html>

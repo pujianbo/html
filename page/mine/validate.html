@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>validate</title>
+		<style type="text/css">
+			input {
+				padding: 0.4em;
+				border: 1px solid gray;
+			}
+			
+			input:focus {
+				outline: 0;
+			}
+			
+			label {
+				padding-left: 1em;
+			}
+			
+			td {
+				padding: 0.4em;
+			}
+			
+			td label:first-child {
+				padding-left: 0;
+			}
+			
+			label.error {
+				color: orangered;
+			}
+			
+			input.error {
+				border: 1px solid orangered;
+			}
+		</style>
+		<script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/validate.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<form action="validate.html" id="form">
+			<table>
+				<tr>
+					<td>用户名</td>
+					<td>
+						<input type="text" name="username" id="username" placeholder="username" />
+					</td>
+				</tr>
+				<tr>
+					<td>秘 密</td>
+					<td>
+						<input type="text" name="secret" id="secret" placeholder="secret" />
+					</td>
+				</tr>
+				<tr>
+					<td>密 码</td>
+					<td>
+						<input type="password" name="password" id="password" placeholder="password" />
+					</td>
+				</tr>
+				<tr>
+					<td>确认密码</td>
+					<td>
+						<input type="password" name="passwordCon" id="passwordCon" placeholder="passwordCon" />
+					</td>
+				</tr>
+				<tr>
+					<td>邮 箱</td>
+					<td>
+						<input type="email" name="email" id="email" placeholder="email" />
+					</td>
+				</tr>
+				<tr>
+					<td>生 日</td>
+					<td>
+						<input type="text" name="birthday" id="birthday" placeholder="birthday" />
+					</td>
+				</tr>
+				<tr>
+					<td>年 龄</td>
+					<td>
+						<input type="text" name="age" id="age" placeholder="age" />
+					</td>
+				</tr>
+				<tr>
+					<td>开 关</td>
+					<td>
+						<label><input type="checkbox" name="switch" id="switch" />开启性别必选</label>
+					</td>
+				</tr>
+				<tr>
+					<td>性 别</td>
+					<td>
+						<label><input type="radio" name="sex" value"0" />保密</label>
+						<label><input type="radio" name="sex" value"1" />男</label>
+						<label><input type="radio" name="sex" value"2" />女</label>
+					</td>
+				</tr>
+				<tr>
+					<td>爱 好</td>
+					<td>
+						<label><input type="checkbox" name="love[]" required minlength="2" />item1</label>
+						<label><input type="checkbox" name="love[]" />item2</label>
+						<label><input type="checkbox" name="love[]" />item3</label>
+						<label><input type="checkbox" name="love[]" />item4</label>
+						<label for="love[]" class="error"></label>
+					</td>
+				</tr>
+				<tr>
+					<td>选 择</td>
+					<td>
+						<label><input type="checkbox" name="select" />item1</label>
+						<label><input type="checkbox" name="select" />item2</label>
+						<label><input type="checkbox" name="select" />item3</label>
+						<label><input type="checkbox" name="select" />item4</label>
+					</td>
+				</tr>
+				<tr>
+					<td>数 值</td>
+					<td>
+						<input type="tel" name="num" id="num" placeholder="num" maxlength="11" required />
+					</td>
+				</tr>
+				<tr>
+					<td>手 机</td>
+					<td>
+						<input type="text" name="mobile" id="mobile" placeholder="mobile" maxlength="11" />
+					</td>
+				</tr>
+				<tr>
+					<td>座 机</td>
+					<td>
+						<input type="text" name="tel" id="tel" placeholder="tel" maxlength="11" />
+					</td>
+				</tr>
+				<tr>
+					<td>身份证</td>
+					<td>
+						<input type="tel" name="card" id="card" placeholder="card" maxlength="18" />
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<input type="submit" id="submit" name="submit" value="submit" />
+					</td>
+				</tr>
+			</table>
+		</form>
+		<script type="text/javascript">
+			//自定义验证
+			$.validator.addMethod("secretvalid", function(value) {
+				return value == "1122";
+			}, 'Please enter "1122"!');
+
+			$.validator.addMethod("selectset", function(value, element, param) {
+				return $(element).length > 2 ? true : false;
+			}, '请至少选择2个');
+
+			$(function() {
+				$('#form').validate({
+					/*errorLabelContainer: $(this).find('tr:first-child'),
+					wrapper: 'td',*/
+					/*errorPlacement: function(error, element) {
+						$(element).parent('td').after(error);
+					},
+					errorElement: 'label',
+					wrapper: 'td',*/
+					/*errorPlacement: function(error, element) {//不提示 },*/
+					rules: {
+						username: {
+							required: true,
+							ch: true,
+							errorPlacement: function(error, element) {
+								$(element).parent('td').after(error);
+							},
+						},
+						secret: 'secretvalid',
+						password: {
+							password: true
+						},
+						passwordCon: {
+							equalTo: password
+						},
+						email: {
+							email: true
+						},
+						birthday: {
+							dateISO: true
+						},
+						age: {
+							//min:18,
+							//max:100
+							range: [18, 100]
+						},
+						sex: {
+							required: '#switch:checked'
+								/*required: function() {
+									return $('#switch').is(':checked');
+								}*/
+						},
+						/*select: {
+							required: true,
+							minlength: 2
+						},*/
+						select: 'selectset',
+						num: {
+							digits: true,
+							minlength: 2,
+							maxlength: 6
+						},
+						card: {
+							idcard: true,
+							required: true
+						},
+						tel: {
+							telephone: true
+						},
+						mobile: {
+							mobilephone: true
+						}
+					},
+					messages: {
+						select: {
+							minlength: '至少选择两个'
+						}
+					}
+				});
+			});
+		</script>
+	</body>
+
+</html>
